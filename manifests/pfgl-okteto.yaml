@@ -13,9 +13,8 @@ spec:
         app: pfgl
     spec:
       containers:
-      - image: piercesaly/pfgl:hello
+      - image: piercesaly/pfgl:latest # pullPolicy Always when use latest tag
         name: pfgl
-        imagePullPolicy: Always
 
 ---
 
