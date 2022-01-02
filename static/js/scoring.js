@@ -1,5 +1,5 @@
 (function() {
-    var req_url = "https://fastapi-psaly.cloud.okteto.net/api/v1/scoreboard";
+    var req_url = "https://pfgl-psaly.cloud.okteto.net/api/v1/scoreboard";
     $.ajax({
         dataType: "json",
         url: req_url,
