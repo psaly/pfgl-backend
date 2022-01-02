@@ -9,6 +9,7 @@ uvicorn = "*"
 requests = "*"
 pymongo = "*"
 beautifulsoup4 = "*"
+fastapi-utils = "*"
 
 [dev-packages]
 

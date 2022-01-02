@@ -2,11 +2,14 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-import requests
-
-from app.database import get_roster_by_manager
+from app.database import get_roster_by_manager, insert_player_scores
 from app.live_scoring import scrape_live_leaderboard
 
+from fastapi_utils.tasks import repeat_every
+# ESPN website scraping interval in minutes
+SCRAPE_INTERVAL = 5 # 5 minutes
+
+# Our app
 app = FastAPI()
 
 # expose static files (js)
@@ -29,31 +32,39 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# task to start immediately when app starts up and run every {SCRAPE_INTERVAL} minutes
+@app.on_event("startup")
+@repeat_every(seconds=60 * SCRAPE_INTERVAL)  
+def update_live_scores_task() -> None:
+    """
+    Scheduled task to be run in fastapi threadpool. 
+    Scrapes ESPN leaderboard and adds scores to player_scores collection in database.
+    """
+    player_scores = scrape_live_leaderboard()
+    insert_result = insert_player_scores(player_scores)
+    if not insert_result["success"]:
+        print("LEADERBOARD SCRAPER: Could not insert the following scores:", insert_result["errors_inserting"])
+    else:
+        print("LEADERBOARD SCRAPER: All scores inserted successfully.")
+    
+
+
+
+# ROUTES
 @app.get("/", tags=["Home"])
 def get_root():
     return {
         "message": "Welcome to the PFGL!"
     }
-
-@app.get("/api/v1/request")
-async def test_request():
-    url = "https://penfield.ai"
-    
-    r = requests.get(url)
-    r.raise_for_status
-    
-    return {
-        "penfield_homepage": r.text
-    }
    
- 
+
 @app.get("/api/v1/scoreboard")
 async def scoreboard():
     scoring = scrape_live_leaderboard()
     return {
         "teams": {
             "james": {
-                "players": scoring["live_scores"]
+                "players": scoring
             }
         }
     }
@@ -127,9 +138,14 @@ def roster_db_test(manager: str):
     return {"message": "manager does not exist"}
 
 # THIS IS REALLY BAD TO HAVE AS A GET BUT IT'S FOR TESTING
-# Maybe background thread here instead of request obviously
+# Use repeated task instead eventually!!!
 @app.get("/api/v1/update_live_scores")
 def update_live_scores():
     player_scores = scrape_live_leaderboard()
-    return {"live_scores": player_scores}
+    insert_result = insert_player_scores(player_scores)
+    if not insert_result["success"]:
+        print("Could not insert the following scores:", insert_result["errors_inserting"])
+    else:
+        print("All scores inserted successfully.")
     
+    return insert_result

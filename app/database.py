@@ -21,7 +21,7 @@ def get_roster_by_manager(manager_name: str):
 
 def insert_player_scores(player_scores: list[dict]) -> dict:
     """
-    Insert player scores from live leaderboard scrape into player_scores collection
+    Insert player scores from live leaderboard scrape into player_scores collection.
     Return {"success": True/False, "errors_inserting": list of uninserted player_scores}
     """
     success_message = {"success": True, "errors_inserting": []}
