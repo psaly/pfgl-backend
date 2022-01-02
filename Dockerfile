@@ -6,6 +6,7 @@ ADD Pipfile /Pipfile
 ADD Pipfile.lock /Pipfile.lock
 ADD main.py /main.py
 ADD okteto-stack.yaml /okteto-stack.yaml
+ADD .env /.env
 
 RUN pipenv install --system --deploy
 
