@@ -1,6 +1,9 @@
 from pymongo import MongoClient 
-
+ 
+# Okteto deployment MongoClient
 client = MongoClient("mongodb://mongodb:27017")
+# Local MongoClient
+# client = MongoClient("mongodb://localhost:27017")
 
 database = client.pfgl
 
