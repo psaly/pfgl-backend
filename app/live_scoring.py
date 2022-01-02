@@ -4,9 +4,13 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def scrape_live_leaderboard() -> dict:
-    # url = "https://www.espn.com/golf/leaderboard/_/tournamentId/401353202" # 2021-22 RSM
-    url = "https://www.espn.com/golf/leaderboard/_/tournamentId/401243418" # 2020-21 PGA Champ
+def scrape_live_leaderboard() -> list:
+    """
+    Scrape ESPN leaderboard and return list containing all player scores
+    [keys: "tournament_name", "player_name", "position", "score_to_par": "thru"}, ...]
+    """
+    url = "https://www.espn.com/golf/leaderboard/_/tournamentId/401353202" # 2021-22 RSM
+    # url = "https://www.espn.com/golf/leaderboard/_/tournamentId/401243418" # 2020-21 PGA Champ
 
     # make request and check status
     r = requests.get(url)
@@ -62,7 +66,8 @@ def scrape_live_leaderboard() -> dict:
                     # score could be None still if we need to fill in with worst score
                     # Maybe create an object here?
                     all_players.append({
-                                        "name": player, 
+                                        "tournament_name": tourney_name,
+                                        "player_name": player, 
                                         "position": pos, 
                                         "score_to_par": score, 
                                         "thru": thru
@@ -77,10 +82,7 @@ def scrape_live_leaderboard() -> dict:
         if player["score_to_par"] is None:
             player["score_to_par"] = cut_score
         
-    return {
-        "tournament_name": tourney_name,
-        "live_scores": all_players,
-    }
+    return all_players
             
     
 
