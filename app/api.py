@@ -5,17 +5,21 @@ from fastapi.staticfiles import StaticFiles
 import requests
 
 from app.database import get_roster_by_manager
+from app.live_scoring import scrape_live_leaderboard
 
 app = FastAPI()
 
 # expose static files (js)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-origins = [
-    "http://pfgl.webflow.io",
-    "https://pfgl.webflow.io",
-    "null" # for testing html locally
-]
+# deployment
+# origins = [
+#     "http://pfgl.webflow.io",
+#     "https://pfgl.webflow.io"
+# ]
+
+# testing locally
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -45,6 +49,18 @@ async def test_request():
  
 @app.get("/api/v1/scoreboard")
 async def scoreboard():
+    scoring = scrape_live_leaderboard()
+    return {
+        "teams": {
+            "james": {
+                "players": scoring["live_scores"]
+            }
+        }
+    }
+
+ 
+@app.get("/api/v1/scoreboard_hardcoded")
+async def scoreboard_hardcoded():
     
     return {
         "teams":
@@ -109,4 +125,11 @@ def roster_db_test(manager: str):
         return roster
     
     return {"message": "manager does not exist"}
+
+# THIS IS REALLY BAD TO HAVE AS A GET BUT IT'S FOR TESTING
+# Maybe background thread here instead of request obviously
+@app.get("/api/v1/update_live_scores")
+def update_live_scores():
+    player_scores = scrape_live_leaderboard()
+    return {"live_scores": player_scores}
     

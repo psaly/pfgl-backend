@@ -1,11 +1,11 @@
-from pymongo import MongoClient
-from bson import ObjectId
-from decouple import config
+from pymongo import MongoClient 
 
-connection_details = config("DB_HOST")
-client = MongoClient(connection_details)
+client = MongoClient("mongodb://mongodb:27017")
+
 database = client.pfgl
+
 rosters_collection = database.get_collection('rosters')
+current_scores_collection = database.get_collection('current_scores')
 
 def get_roster_by_manager(manager_name: str):
     roster = rosters_collection.find_one({"manager": manager_name})
@@ -14,6 +14,7 @@ def get_roster_by_manager(manager_name: str):
     
 def parse_roster_data(roster):
     return {
+        # parse mongo internal ObjectId
         "id": str(roster["_id"]),
         "manager": roster["manager"],
         "players": roster["players"]
