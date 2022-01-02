@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pfgl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pfgl
+  template:
+    metadata:
+      labels:
+        app: pfgl
+    spec:
+      containers:
+      - image: piercesaly/pfgl:hello
+        name: pfgl
+        imagePullPolicy: Always
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: pfgl
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  type: ClusterIP
+  ports:
+  - name: "pfgl"
+    port: 8080
+  selector:
+    app: pfgl
