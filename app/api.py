@@ -4,6 +4,8 @@ from fastapi.staticfiles import StaticFiles
 
 import requests
 
+from app.database import get_roster_by_manager
+
 app = FastAPI()
 
 # expose static files (js)
@@ -98,3 +100,13 @@ async def scoreboard():
                     }
             }
     }
+    
+# Pymongo is synchronous! Maybe use Motor driver for async in the future!?
+@app.get("/api/v1/roster/{manager}")
+def roster_db_test(manager: str):
+    roster = get_roster_by_manager(manager)
+    if roster:
+        return roster
+    
+    return {"message": "manager does not exist"}
+    

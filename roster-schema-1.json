@@ -1,0 +1,57 @@
+{
+  "manager": "james",
+  "players": [
+    {
+      "name": "Justin Thomas",
+      "starter": true
+    },
+    {
+      "name": "Webb Simpson",
+      "starter": true
+    },
+    {
+      "name": "Sungjae Im",
+      "starter": true
+    },
+    {
+      "name": "Charley Hoffman",
+      "starter": true
+    },
+    {
+      "name": "Russell Henley",
+      "starter": true
+    },
+    {
+      "name": "Kevin Streelman",
+      "starter": true
+    },
+    {
+      "name": "Joel Dahmen",
+      "starter": true
+    },
+    {
+      "name": "Patton Kizzire",
+      "starter": false
+    },
+    {
+      "name": "Gary Woodland",
+      "starter": false
+    },
+    {
+      "name": "Bubba Watson",
+      "starter": false
+    },
+    {
+      "name": "Alex Smalley",
+      "starter": false
+    },
+    {
+      "name": "J.J. Spaun",
+      "starter": false
+    },
+    {
+      "name": "Sepp Straka",
+      "starter": false
+    }
+  ]
+}
