@@ -1,0 +1,592 @@
+[
+  {
+    "manager": "lucas",
+    "manager_name": "Lucas",
+    "team_name": "Scooby Dew",
+    "roster": [
+      {
+        "name": "Jon Rahm",
+        "starter": true
+      },
+      {
+        "name": "Hideki Matsuyama",
+        "starter": true
+      },
+      {
+        "name": "Joaquin Niemann",
+        "starter": true
+      },
+      {
+        "name": "Justin Rose",
+        "starter": true
+      },
+      {
+        "name": "Kevin Kisner",
+        "starter": true
+      },
+      {
+        "name": "Keith Mitchell",
+        "starter": true
+      },
+      {
+        "name": "Ryan Palmer",
+        "starter": true
+      },
+      {
+        "name": "Matt Kuchar",
+        "starter": false
+      },
+      {
+        "name": "Adam Hadwin",
+        "starter": false
+      },
+      {
+        "name": "Stewart Cink",
+        "starter": false
+      },
+      {
+        "name": "Lee Westwood",
+        "starter": false
+      },
+      {
+        "name": "Phil Mickelson",
+        "starter": false
+      },
+      {
+        "name": "Charl Schwartzel",
+        "starter": false
+      }
+    ]
+  },
+  {
+    "manager": "james",
+    "manager_name": "James",
+    "team_name": "Drops of Jupiter",
+    "roster": [
+      {
+        "name": "Justin Thomas",
+        "starter": true
+      },
+      {
+        "name": "Webb Simpson",
+        "starter": true
+      },
+      {
+        "name": "Sungjae Im",
+        "starter": true
+      },
+      {
+        "name": "Charley Hoffman",
+        "starter": true
+      },
+      {
+        "name": "Russell Henley",
+        "starter": true
+      },
+      {
+        "name": "Kevin Streelman",
+        "starter": true
+      },
+      {
+        "name": "Joel Dahmen",
+        "starter": true
+      },
+      {
+        "name": "Patton Kizzire",
+        "starter": false
+      },
+      {
+        "name": "Gary Woodland",
+        "starter": false
+      },
+      {
+        "name": "Bubba Watson",
+        "starter": false
+      },
+      {
+        "name": "Alex Smalley",
+        "starter": false
+      },
+      {
+        "name": "J.J. Spaun",
+        "starter": false
+      },
+      {
+        "name": "Sepp Straka",
+        "starter": false
+      }
+    ]
+  },
+  {
+    "manager": "jordan",
+    "manager_name": "Jordan",
+    "team_name": "Irritable Bowel Finch",
+    "roster": [
+      {
+        "name": "Viktor Hovland",
+        "starter": true
+      },
+      {
+        "name": "Abraham Ancer",
+        "starter": true
+      },
+      {
+        "name": "Corey Conners",
+        "starter": true
+      },
+      {
+        "name": "Sergio Garcia",
+        "starter": true
+      },
+      {
+        "name": "Mito Pereira",
+        "starter": true
+      },
+      {
+        "name": "Cameron Champ",
+        "starter": true
+      },
+      {
+        "name": "Emiliano Grillo",
+        "starter": true
+      },
+      {
+        "name": "Chad Ramey",
+        "starter": false
+      },
+      {
+        "name": "Matt Jones",
+        "starter": false
+      },
+      {
+        "name": "Matt Wallace",
+        "starter": false
+      },
+      {
+        "name": "Adam Schenk",
+        "starter": false
+      },
+      {
+        "name": "Vincent Whaley",
+        "starter": false
+      },
+      {
+        "name": "Mark Hubbard",
+        "starter": false
+      }
+    ]
+  },
+  {
+    "manager": "alex",
+    "manager_name": "Alex",
+    "team_name": "The Gay Botherer",
+    "roster": [
+      {
+        "name": "Patrick Cantlay",
+        "starter": true
+      },
+      {
+        "name": "Cameron Smith",
+        "starter": true
+      },
+      {
+        "name": "Jason Kokrak",
+        "starter": true
+      },
+      {
+        "name": "Cameron Tringale",
+        "starter": true
+      },
+      {
+        "name": "Adam Scott",
+        "starter": true
+      },
+      {
+        "name": "Jhonattan Vegas",
+        "starter": true
+      },
+      {
+        "name": "Alex Noren",
+        "starter": true
+      },
+      {
+        "name": "Ian Poulter",
+        "starter": false
+      },
+      {
+        "name": "Chris Kirk",
+        "starter": false
+      },
+      {
+        "name": "Zach Johnson",
+        "starter": false
+      },
+      {
+        "name": "Tom Hoge",
+        "starter": false
+      },
+      {
+        "name": "Doug Ghim",
+        "starter": false
+      },
+      {
+        "name": "Aaron Rai",
+        "starter": false
+      }
+    ]
+  },
+  {
+    "manager": "calum",
+    "manager_name": "Calum",
+    "team_name": "Saw Dudes",
+    "roster": [
+      {
+        "name": "Collin Morikawa",
+        "starter": true
+      },
+      {
+        "name": "Scottie Scheffler",
+        "starter": true
+      },
+      {
+        "name": "Will Zalatoris",
+        "starter": true
+      },
+      {
+        "name": "Shane Lowry",
+        "starter": true
+      },
+      {
+        "name": "Marc Leishman",
+        "starter": true
+      },
+      {
+        "name": "Brian Harman",
+        "starter": true
+      },
+      {
+        "name": "Christiaan Bezuidenhout",
+        "starter": true
+      },
+      {
+        "name": "Jason Day",
+        "starter": false
+      },
+      {
+        "name": "Garrick Higgo",
+        "starter": false
+      },
+      {
+        "name": "Stephan Jaeger",
+        "starter": false
+      },
+      {
+        "name": "Adam Long",
+        "starter": false
+      },
+      {
+        "name": "Denny McCarthy",
+        "starter": false
+      },
+      {
+        "name": "Cameron Young",
+        "starter": false
+      }
+    ]
+  },
+  {
+    "manager": "will",
+    "manager_name": "Will",
+    "team_name": "PineappleDaiquiri",
+    "roster": [
+      {
+        "name": "Xander Schauffele",
+        "starter": true
+      },
+      {
+        "name": "Sam Burns",
+        "starter": true
+      },
+      {
+        "name": "Harris English",
+        "starter": true
+      },
+      {
+        "name": "Tyrrell Hatton",
+        "starter": true
+      },
+      {
+        "name": "Maverick McNealy",
+        "starter": true
+      },
+      {
+        "name": "Cameron Davis",
+        "starter": true
+      },
+      {
+        "name": "Harold Varner III",
+        "starter": true
+      },
+      {
+        "name": "Keegan Bradley",
+        "starter": false
+      },
+      {
+        "name": "Taylor Pendrith",
+        "starter": false
+      },
+      {
+        "name": "Kramer Hickok",
+        "starter": false
+      },
+      {
+        "name": "Hayden Buckley",
+        "starter": false
+      },
+      {
+        "name": "C.T. Pan",
+        "starter": false
+      },
+      {
+        "name": "Thomas Pieters",
+        "starter": false
+      }
+    ]
+  },
+  {
+    "manager": "pierce",
+    "manager_name": "Pierce",
+    "team_name": "Freed Piss Bear",
+    "roster": [
+      {
+        "name": "Bryson DeChambeau",
+        "starter": true
+      },
+      {
+        "name": "Daniel Berger",
+        "starter": true
+      },
+      {
+        "name": "Patrick Reed",
+        "starter": true
+      },
+      {
+        "name": "Paul Casey",
+        "starter": true
+      },
+      {
+        "name": "Matthew Wolff",
+        "starter": true
+      },
+      {
+        "name": "Tommy Fleetwood",
+        "starter": true
+      },
+      {
+        "name": "Erik Van Rooyen",
+        "starter": true
+      },
+      {
+        "name": "Taylor Moore",
+        "starter": false
+      },
+      {
+        "name": "Luke List",
+        "starter": false
+      },
+      {
+        "name": "Branden Grace",
+        "starter": false
+      },
+      {
+        "name": "K.H. Lee",
+        "starter": false
+      },
+      {
+        "name": "Matthias Schwab",
+        "starter": false
+      },
+      {
+        "name": "Pat Perez",
+        "starter": false
+      }
+    ]
+  },
+  {
+    "manager": "braden",
+    "manager_name": "Braden",
+    "team_name": "Square-Wood",
+    "roster": [
+      {
+        "name": "Rory McIlroy",
+        "starter": true
+      },
+      {
+        "name": "Tony Finau",
+        "starter": true
+      },
+      {
+        "name": "Mackenzie Hughes",
+        "starter": true
+      },
+      {
+        "name": "Matthew Fitzpatrick",
+        "starter": true
+      },
+      {
+        "name": "Sebastian Munoz",
+        "starter": true
+      },
+      {
+        "name": "Carlos Ortiz",
+        "starter": true
+      },
+      {
+        "name": "Robert MacIntyre",
+        "starter": true
+      },
+      {
+        "name": "Lucas Herbert",
+        "starter": false
+      },
+      {
+        "name": "Harry Higgs",
+        "starter": false
+      },
+      {
+        "name": "Charles Howell III",
+        "starter": false
+      },
+      {
+        "name": "Min Woo Lee",
+        "starter": false
+      },
+      {
+        "name": "Sahith Theegala",
+        "starter": false
+      },
+      {
+        "name": "Rory Sabbatini",
+        "starter": false
+      }
+    ]
+  },
+  {
+    "manager": "al",
+    "manager_name": "Al",
+    "team_name": "Snow Patrol",
+    "roster": [
+      {
+        "name": "Dustin Johnson",
+        "starter": true
+      },
+      {
+        "name": "Louis Oosthuizen",
+        "starter": true
+      },
+      {
+        "name": "Billy Horschel",
+        "starter": true
+      },
+      {
+        "name": "Kevin Na",
+        "starter": true
+      },
+      {
+        "name": "Si Woo Kim",
+        "starter": true
+      },
+      {
+        "name": "Rickie Fowler",
+        "starter": true
+      },
+      {
+        "name": "Brendon Todd",
+        "starter": true
+      },
+      {
+        "name": "Lanto Griffin",
+        "starter": false
+      },
+      {
+        "name": "Brendan Steele",
+        "starter": false
+      },
+      {
+        "name": "Martin Laird",
+        "starter": false
+      },
+      {
+        "name": "Lucas Glover",
+        "starter": false
+      },
+      {
+        "name": "Chez Reavie",
+        "starter": false
+      },
+      {
+        "name": "Takumi Kanaya",
+        "starter": false
+      }
+    ]
+  },
+  {
+    "manager": "keith",
+    "manager_name": "Keith",
+    "team_name": "TBD",
+    "roster": [
+      {
+        "name": "Brooks Koepka",
+        "starter": true
+      },
+      {
+        "name": "Jordan Spieth",
+        "starter": true
+      },
+      {
+        "name": "Talor Gooch",
+        "starter": true
+      },
+      {
+        "name": "Max Homa",
+        "starter": true
+      },
+      {
+        "name": "Aaron Wise",
+        "starter": true
+      },
+      {
+        "name": "Seamus Power",
+        "starter": true
+      },
+      {
+        "name": "Dylan Frittelli",
+        "starter": true
+      },
+      {
+        "name": "Greyson Sigg",
+        "starter": false
+      },
+      {
+        "name": "Patrick Rodgers",
+        "starter": false
+      },
+      {
+        "name": "Danny Lee",
+        "starter": false
+      },
+      {
+        "name": "Troy Merritt",
+        "starter": false
+      },
+      {
+        "name": "Henrik Norlander",
+        "starter": false
+      },
+      {
+        "name": "Andrew Landry",
+        "starter": false
+      }
+    ]
+  }
+]

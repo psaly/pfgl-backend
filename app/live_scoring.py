@@ -9,7 +9,8 @@ def scrape_live_leaderboard() -> list:
     Scrape ESPN leaderboard and return list containing all player scores
     [keys: "tournament_name", "player_name", "position", "score_to_par": "thru"}, ...]
     """
-    url = "https://www.espn.com/golf/leaderboard/_/tournamentId/401353202" # 2021-22 RSM
+    url = "https://www.espn.com/golf/leaderboard"
+    # url = "https://www.espn.com/golf/leaderboard/_/tournamentId/401353202" # 2021-22 RSM
     # url = "https://www.espn.com/golf/leaderboard/_/tournamentId/401243418" # 2020-21 PGA Champ
 
     # make request and check status
