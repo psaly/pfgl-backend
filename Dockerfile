@@ -3,6 +3,7 @@ FROM python:3.9-slim
 ENV DB_HOST=mongodb://mongodb:27017
 ENV UVICORN_RELOAD=False
 ENV ALLOWED_HOSTS="https://pfgl.webflow.io, http://pfgl.webflow.io"
+ENV COUNTING_SCORES=4
 
 RUN pip install pipenv
 

@@ -19,7 +19,6 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # deployment
 origins = config('ALLOWED_HOSTS', cast=Csv())
-print(origins)
 
 app.add_middleware(
     CORSMiddleware,
@@ -78,9 +77,12 @@ async def scoreboard():
                     "thru": '???'
                 })
         player_scores.sort(key=lambda x:x["score_to_par"])
+        counting_scores = config("COUNTING_SCORES", cast=int)
+        team_score = sum([x["score_to_par"] for x in player_scores[:counting_scores]])
                 
         del team["roster"]
         team["players"] = player_scores
+        team["team_score"] = team_score
 
         response["teams"].append(team)    
     
