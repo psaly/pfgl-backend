@@ -10,6 +10,7 @@ requests = "*"
 pymongo = "*"
 beautifulsoup4 = "*"
 fastapi-utils = "*"
+python-decouple = "*"
 
 [dev-packages]
 

@@ -1,5 +1,8 @@
 FROM python:3.9-slim
 
+ENV DB_HOST=mongodb://mongodb:27017
+ENV UVICORN_RELOAD=False
+
 RUN pip install pipenv
 
 ADD Pipfile /Pipfile

@@ -2,8 +2,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
+from decouple import config, Csv
+
 from app.database import get_team_by_manager, insert_player_scores
-from app.live_scoring import scrape_live_leaderboard
+from app.leaderboard_scraper import scrape_live_leaderboard
 
 from fastapi_utils.tasks import repeat_every
 # ESPN website scraping interval in minutes
@@ -16,13 +18,7 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # deployment
-# origins = [
-#     "http://pfgl.webflow.io",
-#     "https://pfgl.webflow.io"
-# ]
-
-# testing locally
-origins = ["*"]
+origins = config('ALLOWED_HOSTS', cast=Csv())
 
 app.add_middleware(
     CORSMiddleware,
@@ -129,7 +125,7 @@ async def scoreboard_hardcoded():
     
 # Pymongo is synchronous! Maybe use Motor driver for async in the future!?
 @app.get("/api/v1/team/{manager}")
-def roster_db_test(manager: str):
+def team_db_test(manager: str):
     team = get_team_by_manager(manager)
     if team:
         return team

@@ -1,9 +1,9 @@
 from pymongo import MongoClient
- 
-# Okteto deployment MongoClient
-# client = MongoClient("mongodb://mongodb:27017")
-# Local MongoClient
-client = MongoClient("mongodb://localhost:27017")
+from decouple import config
+
+mongo_connection_details = config("DB_HOST")
+
+client = MongoClient(mongo_connection_details)
 
 database = client.pfgl
 
@@ -34,8 +34,6 @@ def insert_player_scores(player_scores: list[dict]) -> dict:
     return success_message
 
 
-    
-    
 # HELPER FUNCTIONS
 
 def _parse_team_data(team) -> dict:
