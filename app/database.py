@@ -1,5 +1,6 @@
 from pymongo import MongoClient
 from decouple import config
+from bson.json_util import dumps
 
 mongo_connection_details = config("DB_HOST")
 
@@ -9,14 +10,51 @@ database = client.pfgl
 
 teams_collection = database.get_collection('teams')
 player_scores_collection = database.get_collection('player_scores')
+tournament_collection = database.get_collection('tournaments')
+
+
+def get_all_teams():
+    """
+    Return list of team objects or None if something goes terribly wrong
+    """
+    return teams_collection.find({}, {"_id": 0})
 
 def get_team_by_manager(manager_name: str):
     """
     return roster object from db or None if manager_name does not exist
     """
-    team = teams_collection.find_one({"manager": manager_name})
-    if team:
-        return _parse_team_data(team)
+    return teams_collection.find_one({"manager": manager_name}, {"_id": 0})
+    
+
+
+def get_team_starting_lineups() -> list:
+    """
+    Return list of teams with only starting players included
+    """
+    return teams_collection.aggregate(
+        [{
+            "$project": {
+                "_id": 0,
+                "manager": 1,
+                "manager_name": 1,
+                "team_name": 1,
+                "roster": {
+                    "$filter": {
+                        "input": "$roster", 
+                        "as": "player", 
+                        "cond": {
+                            "$eq": ["$$player.starter", True]
+                        }
+                    }
+                }
+            }
+        }]
+    )
+
+
+def get_player_score_by_name(player_name: str, tourney_name: str) -> dict:
+    return player_scores_collection.find_one({"player_name": player_name, "tournament_name": tourney_name}, {"_id": 0})
+     
     
 
 def insert_player_scores(player_scores: list[dict]) -> dict:
@@ -34,25 +72,29 @@ def insert_player_scores(player_scores: list[dict]) -> dict:
     return success_message
 
 
-# HELPER FUNCTIONS
 
-def _parse_team_data(team) -> dict:
-    """
-    helper for rosters collection to parse internal mongo ObjectId
-    """
-    # roster is optional right now
-    roster = []
-    try:
-        roster = team["roster"]
-    except KeyError as e:
-        pass
+def get_tournament_name():
+    tourney = tournament_collection.find_one({"active": True}, {"_id": 0})
+    if tourney:
+        return tourney["tournament_name"]
+
+# def _parse_team_data(team) -> dict:
+#     """
+#     helper for rosters collection to parse internal mongo ObjectId
+#     """
+#     # roster is optional right now
+#     roster = []
+#     try:
+#         roster = team["roster"]
+#     except KeyError as e:
+#         pass
     
-    return {
-        # parse mongo internal ObjectId
-        "id": str(team["_id"]),
-        "manager": team["manager"],
-        "manager_name": team["manager_name"],
-        "team_name": team["team_name"],
-        "roster": team["roster"]
-    }
+#     return {
+#         # parse mongo internal ObjectId
+#         "id": str(team["_id"]),
+#         "manager": team["manager"],
+#         "manager_name": team["manager_name"],
+#         "team_name": team["team_name"],
+#         "roster": team["roster"]
+#     }
     

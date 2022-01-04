@@ -4,7 +4,7 @@ from fastapi.staticfiles import StaticFiles
 
 from decouple import config, Csv
 
-from app.database import get_team_by_manager, insert_player_scores
+from app.database import get_tournament_name, get_team_starting_lineups, get_team_by_manager, get_player_score_by_name, insert_player_scores
 from app.leaderboard_scraper import scrape_live_leaderboard
 
 from fastapi_utils.tasks import repeat_every
@@ -52,18 +52,39 @@ def get_root():
     return {
         "message": "Welcome to the PFGL!"
     }
-   
+
 
 @app.get("/api/v1/scoreboard")
 async def scoreboard():
-    scoring = scrape_live_leaderboard()
-    return {
-        "teams": {
-            "james": {
-                "players": scoring
-            }
-        }
-    }
+    team_lineups = get_team_starting_lineups()
+    tourney_name = get_tournament_name()
+    
+    response = {"teams": []}
+    
+    for team in team_lineups:
+        print(team)
+        player_scores = []
+        for player in team["roster"]:
+            score = get_player_score_by_name(player["name"], tourney_name)
+            if score:
+                del score["tournament_name"]
+                player_scores.append(score)
+            # This player could not be found on the leaderboard
+            else:
+                player_scores.append({
+                    "player_name": player["name"],
+                    "position": '???',
+                    "score_to_par": 100,
+                    "thru": '???'
+                })
+        player_scores.sort(key=lambda x:x["score_to_par"])
+                
+        del team["roster"]
+        team["players"] = player_scores
+
+        response["teams"].append(team)    
+    
+    return response
 
  
 @app.get("/api/v1/scoreboard_hardcoded")
