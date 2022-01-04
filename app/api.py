@@ -19,6 +19,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # deployment
 origins = config('ALLOWED_HOSTS', cast=Csv())
+print(origins)
 
 app.add_middleware(
     CORSMiddleware,
@@ -62,7 +63,6 @@ async def scoreboard():
     response = {"teams": []}
     
     for team in team_lineups:
-        print(team)
         player_scores = []
         for player in team["roster"]:
             score = get_player_score_by_name(player["name"], tourney_name)
@@ -147,7 +147,6 @@ async def scoreboard_hardcoded():
 # Pymongo is synchronous! Maybe use Motor driver for async in the future!?
 @app.get("/api/v1/team/{manager}")
 def team_db_test(manager: str):
-    print(manager)
     team = get_team_by_manager(manager)
     if team:
         return team
