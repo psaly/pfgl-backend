@@ -53,6 +53,16 @@ def get_root():
         "message": "Welcome to the PFGL!"
     }
    
+   
+# Pymongo is synchronous! Maybe use Motor driver for async in the future!?
+@app.get("/api/v1/{manager}}")
+def team_db_test(manager: str):
+    print(manager)
+    team = get_team_by_manager(manager)
+    if team:
+        return team
+    
+    return {"message": "manager does not exist"}
 
 @app.get("/api/v1/scoreboard")
 async def scoreboard():
@@ -126,6 +136,7 @@ async def scoreboard_hardcoded():
 # Pymongo is synchronous! Maybe use Motor driver for async in the future!?
 @app.get("/api/v1/team/{manager}")
 def team_db_test(manager: str):
+    print(manager)
     team = get_team_by_manager(manager)
     if team:
         return team
