@@ -4,12 +4,11 @@ from fastapi.staticfiles import StaticFiles
 
 from decouple import config, Csv
 
-from app.database import get_tournament_name, get_team_starting_lineups, get_team_by_manager, get_player_score_by_name, insert_player_scores
-from app.leaderboard_scraper import scrape_live_leaderboard
+from app.database import get_tournament_name, get_team_starting_lineups, get_team_by_manager, update_active_event
+from app.database import get_player_score_by_name, insert_player_scores, update_field_this_week
+from app.data_collection import scrape_live_leaderboard, get_field_json
 
 from fastapi_utils.tasks import repeat_every
-# ESPN website scraping interval in minutes
-SCRAPE_INTERVAL = 120 # 120 minutes
 
 # Our app
 app = FastAPI()
@@ -28,24 +27,59 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# task to start immediately when app starts up and run every {SCRAPE_INTERVAL} minutes
+# Intervals for scheduled tasks (in mins)
+leaderboard_scrape_interval = config("LEADERBOARD_SCRAPE_INTERVAL", cast=int)
+field_update_interval = config("FIELD_UPDATE_INTERVAL", cast=int)
+
+# For displaying old tournament leaderboard
+display_old_tournament_leaderboard = config("DISPLAY_OLD_TOURNAMENT_LEADERBOARD", cast=bool)
+old_tournament_name = config("OLD_TOURNAMENT_NAME")
+old_tournament_url = config("OLD_TOURNAMENT_URL")
+
+# tasks to start immediately when app starts up and run every {SCRAPE_INTERVAL} minutes
 @app.on_event("startup")
-@repeat_every(seconds=60 * SCRAPE_INTERVAL)  
-def update_live_scores_task() -> None:
+@repeat_every(seconds=60 * leaderboard_scrape_interval)  
+def leaderboard_scraper() -> None:
     """
     Scheduled task to be run in fastapi threadpool. 
     Scrapes ESPN leaderboard and adds scores to player_scores collection in database.
     """
+    output_task_name = "LEADERBOARD SCRAPER"
+    print(f"{output_task_name} RUNNING (every {leaderboard_scrape_interval} mins).")
     update_player_scores_in_db = config("UPDATE_PLAYER_SCORES_DB", cast=bool)
     if update_player_scores_in_db:
-        player_scores = scrape_live_leaderboard()
-        insert_result = insert_player_scores(player_scores)
-        if not insert_result["success"]:
-            print("LEADERBOARD SCRAPER: Could not insert the following scores:", insert_result["errors_inserting"])
+        if display_old_tournament_leaderboard:
+            print(f"{output_task_name} ALERT: USING OLD TOURNAMENT: {old_tournament_name}.")
+            player_scores = scrape_live_leaderboard(url=old_tournament_url)
         else:
-            print("LEADERBOARD SCRAPER: All scores inserted successfully.")
+            player_scores = scrape_live_leaderboard()
+        insert_result = insert_player_scores(player_scores)
+        print(f"{output_task_name} DONE: Successfully inserted {insert_result['scores_successfully_inserted']} scores.")
+        if not insert_result["success"]:
+            print(f"{output_task_name} ERROR: Could not insert the following {len(insert_result['errors_inserting'])} scores: {insert_result['errors_inserting']}.")
     else:
-        print("LEADERBOARD SCRAPER IS PAUSED. DB NOT UPDATING.")
+        print(f"{output_task_name} ALERT: DB UPDATING IS PAUSED!")
+
+@app.on_event("startup")
+@repeat_every(seconds=60 * field_update_interval)  
+def field_updater() -> None:
+    """
+    Scheduled task to be run in fastapi threadpool. 
+    Update field and save to db
+    """
+    output_task_name = "FIELD UPDATER"
+    print(f"{output_task_name} RUNNING (every {field_update_interval} mins).")
+    update_field = config("UPDATE_FIELD", cast=bool)
+    if update_field:
+        player_field = get_field_json()
+        message = update_field_this_week(player_field)
+        print(f"{output_task_name} DONE: {message}")
+    else:
+        print(f"{output_task_name} ALERT: FIELD UPDATING IS PAUSED!")
+    
+    # set old tourney as active!!!!!
+    if display_old_tournament_leaderboard:
+        update_active_event(old_tournament_name)
     
 
 
@@ -91,8 +125,29 @@ async def scoreboard():
         response["teams"].append(team)    
     
     return response
+    
+# Pymongo is synchronous! Maybe use Motor driver for async in the future!?
+@app.get("/api/v1/team/{manager}")
+def team_db_test(manager: str):
+    team = get_team_by_manager(manager)
+    if team:
+        return team
+    
+    return {"message": "manager does not exist"}
 
- 
+# THIS IS REALLY BAD TO HAVE AS A GET BUT IT'S FOR TESTING
+# Use repeated task instead eventually!!!
+@app.get("/api/v1/scraping_test")
+def update_live_scores():
+    """
+    For testing scraping code. DOES NOT ADD TO DATABASE!!!!!
+    """
+    player_scores = scrape_live_leaderboard()
+    
+    return player_scores
+
+
+# HARDCODING TESTING
 @app.get("/api/v1/scoreboard_hardcoded")
 async def scoreboard_hardcoded():
     return {
@@ -149,23 +204,3 @@ async def scoreboard_hardcoded():
                     }
             }
     }
-    
-# Pymongo is synchronous! Maybe use Motor driver for async in the future!?
-@app.get("/api/v1/team/{manager}")
-def team_db_test(manager: str):
-    team = get_team_by_manager(manager)
-    if team:
-        return team
-    
-    return {"message": "manager does not exist"}
-
-# THIS IS REALLY BAD TO HAVE AS A GET BUT IT'S FOR TESTING
-# Use repeated task instead eventually!!!
-@app.get("/api/v1/scraping_test")
-def update_live_scores():
-    """
-    For testing scraping code. DOES NOT ADD TO DATABASE!!!!!
-    """
-    player_scores = scrape_live_leaderboard()
-    
-    return player_scores

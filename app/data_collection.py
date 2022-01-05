@@ -2,27 +2,23 @@ __author__ = 'piercesaly'
 
 import requests
 from bs4 import BeautifulSoup
-from decouple import config
 
-
-def scrape_live_leaderboard() -> list:
+def get_field_json() -> list[dict]:
     """
-    Scrape ESPN leaderboard and return list containing all player scores
+    Get this week's field from dg. Return list [{player_obj}, etc.]
+    """
+    r = requests.get("https://api.datagolf.ca/dg-api/v1/model_probs")
+    r.raise_for_status()
+    return r.json()
+
+def scrape_live_leaderboard(url="https://www.espn.com/golf/leaderboard") -> list:
+    """
+    Scrape ESPN leaderboard and return list containing all player scores:
     [keys: "tournament_name", "player_name", "position", "score_to_par": "thru"}, ...]
     """
-    
-    url = "https://www.espn.com/golf/leaderboard"
-    
-    use_hardcoded_leaderboard_url = config("HARDCODED_LEADERBOARD_URL", cast=bool)
-    
-    if use_hardcoded_leaderboard_url:
-        # url = "https://www.espn.com/golf/leaderboard/_/tournamentId/401353202" # 2021-22 RSM
-        url = "https://www.espn.com/golf/leaderboard/_/tournamentId/401243418" # 2020-21 PGA Champ
-    
     # make request and check status
     r = requests.get(url)
     r.raise_for_status()
-    print(url)
 
     soup = BeautifulSoup(r.content, 'html.parser')
 

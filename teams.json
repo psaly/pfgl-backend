@@ -321,7 +321,8 @@
       },
       {
         "name": "Cam Davis",
-        "starter": true
+        "starter": true,
+        "dg_name": "Cameron Davis"
       },
       {
         "name": "Harold Varner III",
@@ -384,7 +385,8 @@
       },
       {
         "name": "Erik van Rooyen",
-        "starter": true
+        "starter": true,
+        "dg_name": "Erik Van Rooyen"
       },
       {
         "name": "Taylor Moore",
@@ -400,7 +402,8 @@
       },
       {
         "name": "K.H. Lee",
-        "starter": false
+        "starter": false,
+        "dg_name": "Kyoung-Hoon Lee"
       },
       {
         "name": "Matthias Schwab",
