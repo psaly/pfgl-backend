@@ -36,12 +36,16 @@ def update_live_scores_task() -> None:
     Scheduled task to be run in fastapi threadpool. 
     Scrapes ESPN leaderboard and adds scores to player_scores collection in database.
     """
-    player_scores = scrape_live_leaderboard()
-    insert_result = insert_player_scores(player_scores)
-    if not insert_result["success"]:
-        print("LEADERBOARD SCRAPER: Could not insert the following scores:", insert_result["errors_inserting"])
+    update_player_scores_in_db = config("UPDATE_PLAYER_SCORES_DB", cast=bool)
+    if update_player_scores_in_db:
+        player_scores = scrape_live_leaderboard()
+        insert_result = insert_player_scores(player_scores)
+        if not insert_result["success"]:
+            print("LEADERBOARD SCRAPER: Could not insert the following scores:", insert_result["errors_inserting"])
+        else:
+            print("LEADERBOARD SCRAPER: All scores inserted successfully.")
     else:
-        print("LEADERBOARD SCRAPER: All scores inserted successfully.")
+        print("LEADERBOARD SCRAPER IS PAUSED. DB NOT UPDATING.")
     
 
 

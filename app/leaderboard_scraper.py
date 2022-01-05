@@ -2,6 +2,7 @@ __author__ = 'piercesaly'
 
 import requests
 from bs4 import BeautifulSoup
+from decouple import config
 
 
 def scrape_live_leaderboard() -> list:
@@ -9,13 +10,19 @@ def scrape_live_leaderboard() -> list:
     Scrape ESPN leaderboard and return list containing all player scores
     [keys: "tournament_name", "player_name", "position", "score_to_par": "thru"}, ...]
     """
-    # url = "https://www.espn.com/golf/leaderboard"
-    # url = "https://www.espn.com/golf/leaderboard/_/tournamentId/401353202" # 2021-22 RSM
-    url = "https://www.espn.com/golf/leaderboard/_/tournamentId/401243418" # 2020-21 PGA Champ
-
+    
+    url = "https://www.espn.com/golf/leaderboard"
+    
+    use_hardcoded_leaderboard_url = config("HARDCODED_LEADERBOARD_URL", cast=bool)
+    
+    if use_hardcoded_leaderboard_url:
+        # url = "https://www.espn.com/golf/leaderboard/_/tournamentId/401353202" # 2021-22 RSM
+        url = "https://www.espn.com/golf/leaderboard/_/tournamentId/401243418" # 2020-21 PGA Champ
+    
     # make request and check status
     r = requests.get(url)
     r.raise_for_status()
+    print(url)
 
     soup = BeautifulSoup(r.content, 'html.parser')
 
@@ -74,7 +81,9 @@ def scrape_live_leaderboard() -> list:
                                         "thru": thru
                                         })                                  
         except KeyError:
-            print("**WEIRD ERROR**", tds[i])
+            print(f"**WEIRD ERROR** {tds[i]}")
+        except IndexError:
+            print(f"**INDEX ERROR--tournament is probably not live** {tds[i]}")
     
     cut_score = worst_score + 5
     

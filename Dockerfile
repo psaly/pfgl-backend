@@ -4,6 +4,9 @@ ENV DB_HOST=mongodb://mongodb:27017
 ENV UVICORN_RELOAD=False
 ENV ALLOWED_HOSTS="https://pfgl.webflow.io, http://pfgl.webflow.io"
 ENV COUNTING_SCORES=4
+ENV UPDATE_PLAYER_SCORES_DB=False
+ENV HARDCODED_LEADERBOARD_URL=True
+
 
 RUN pip install pipenv
 
