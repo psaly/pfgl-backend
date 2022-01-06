@@ -1,0 +1,1082 @@
+[
+  {
+    "segment": 1,
+    "week": 0,
+    "managers": [
+      "will",
+      "calum"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 0,
+    "managers": [
+      "jordan",
+      "braden"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 0,
+    "managers": [
+      "lucas",
+      "al"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 0,
+    "managers": [
+      "alex",
+      "keith"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 0,
+    "managers": [
+      "pierce",
+      "james"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 1,
+    "managers": [
+      "jordan",
+      "calum"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 1,
+    "managers": [
+      "will",
+      "lucas"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 1,
+    "managers": [
+      "braden",
+      "alex"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 1,
+    "managers": [
+      "al",
+      "pierce"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 1,
+    "managers": [
+      "keith",
+      "james"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 2,
+    "managers": [
+      "lucas",
+      "calum"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 2,
+    "managers": [
+      "alex",
+      "jordan"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 2,
+    "managers": [
+      "pierce",
+      "will"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 2,
+    "managers": [
+      "james",
+      "braden"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 2,
+    "managers": [
+      "keith",
+      "al"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 3,
+    "managers": [
+      "calum",
+      "alex"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 3,
+    "managers": [
+      "lucas",
+      "pierce"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 3,
+    "managers": [
+      "jordan",
+      "james"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 3,
+    "managers": [
+      "will",
+      "keith"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 3,
+    "managers": [
+      "braden",
+      "al"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 4,
+    "managers": [
+      "calum",
+      "pierce"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 4,
+    "managers": [
+      "james",
+      "alex"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 4,
+    "managers": [
+      "keith",
+      "lucas"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 4,
+    "managers": [
+      "al",
+      "jordan"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 4,
+    "managers": [
+      "braden",
+      "will"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 5,
+    "managers": [
+      "calum",
+      "james"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 5,
+    "managers": [
+      "pierce",
+      "keith"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 5,
+    "managers": [
+      "alex",
+      "al"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 5,
+    "managers": [
+      "lucas",
+      "braden"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 5,
+    "managers": [
+      "jordan",
+      "will"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 6,
+    "managers": [
+      "keith",
+      "calum"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 6,
+    "managers": [
+      "al",
+      "james"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 6,
+    "managers": [
+      "braden",
+      "pierce"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 6,
+    "managers": [
+      "will",
+      "alex"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 6,
+    "managers": [
+      "lucas",
+      "jordan"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 7,
+    "managers": [
+      "calum",
+      "al"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 7,
+    "managers": [
+      "keith",
+      "braden"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 7,
+    "managers": [
+      "james",
+      "will"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 7,
+    "managers": [
+      "pierce",
+      "jordan"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 7,
+    "managers": [
+      "alex",
+      "lucas"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 8,
+    "managers": [
+      "braden",
+      "calum"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 8,
+    "managers": [
+      "will",
+      "al"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 8,
+    "managers": [
+      "jordan",
+      "keith"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 8,
+    "managers": [
+      "lucas",
+      "james"
+    ]
+  },
+  {
+    "segment": 1,
+    "week": 8,
+    "managers": [
+      "alex",
+      "pierce"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 0,
+    "managers": [
+      "calum",
+      "james"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 0,
+    "managers": [
+      "pierce",
+      "keith"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 0,
+    "managers": [
+      "alex",
+      "al"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 0,
+    "managers": [
+      "lucas",
+      "braden"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 0,
+    "managers": [
+      "jordan",
+      "will"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 1,
+    "managers": [
+      "calum",
+      "al"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 1,
+    "managers": [
+      "keith",
+      "braden"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 1,
+    "managers": [
+      "james",
+      "will"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 1,
+    "managers": [
+      "pierce",
+      "jordan"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 1,
+    "managers": [
+      "alex",
+      "lucas"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 2,
+    "managers": [
+      "lucas",
+      "calum"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 2,
+    "managers": [
+      "alex",
+      "jordan"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 2,
+    "managers": [
+      "pierce",
+      "will"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 2,
+    "managers": [
+      "james",
+      "braden"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 2,
+    "managers": [
+      "keith",
+      "al"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 3,
+    "managers": [
+      "braden",
+      "calum"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 3,
+    "managers": [
+      "will",
+      "al"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 3,
+    "managers": [
+      "jordan",
+      "keith"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 3,
+    "managers": [
+      "lucas",
+      "james"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 3,
+    "managers": [
+      "alex",
+      "pierce"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 4,
+    "managers": [
+      "keith",
+      "calum"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 4,
+    "managers": [
+      "al",
+      "james"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 4,
+    "managers": [
+      "braden",
+      "pierce"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 4,
+    "managers": [
+      "will",
+      "alex"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 4,
+    "managers": [
+      "lucas",
+      "jordan"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 5,
+    "managers": [
+      "calum",
+      "alex"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 5,
+    "managers": [
+      "lucas",
+      "pierce"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 5,
+    "managers": [
+      "jordan",
+      "james"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 5,
+    "managers": [
+      "will",
+      "keith"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 5,
+    "managers": [
+      "braden",
+      "al"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 6,
+    "managers": [
+      "calum",
+      "pierce"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 6,
+    "managers": [
+      "james",
+      "alex"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 6,
+    "managers": [
+      "keith",
+      "lucas"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 6,
+    "managers": [
+      "al",
+      "jordan"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 6,
+    "managers": [
+      "braden",
+      "will"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 7,
+    "managers": [
+      "will",
+      "calum"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 7,
+    "managers": [
+      "jordan",
+      "braden"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 7,
+    "managers": [
+      "lucas",
+      "al"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 7,
+    "managers": [
+      "alex",
+      "keith"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 7,
+    "managers": [
+      "pierce",
+      "james"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 8,
+    "managers": [
+      "jordan",
+      "calum"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 8,
+    "managers": [
+      "will",
+      "lucas"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 8,
+    "managers": [
+      "braden",
+      "alex"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 8,
+    "managers": [
+      "al",
+      "pierce"
+    ]
+  },
+  {
+    "segment": 2,
+    "week": 8,
+    "managers": [
+      "keith",
+      "james"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 0,
+    "managers": [
+      "calum",
+      "pierce"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 0,
+    "managers": [
+      "james",
+      "alex"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 0,
+    "managers": [
+      "keith",
+      "lucas"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 0,
+    "managers": [
+      "al",
+      "jordan"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 0,
+    "managers": [
+      "braden",
+      "will"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 1,
+    "managers": [
+      "lucas",
+      "calum"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 1,
+    "managers": [
+      "alex",
+      "jordan"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 1,
+    "managers": [
+      "pierce",
+      "will"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 1,
+    "managers": [
+      "james",
+      "braden"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 1,
+    "managers": [
+      "keith",
+      "al"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 2,
+    "managers": [
+      "keith",
+      "calum"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 2,
+    "managers": [
+      "al",
+      "james"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 2,
+    "managers": [
+      "braden",
+      "pierce"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 2,
+    "managers": [
+      "will",
+      "alex"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 2,
+    "managers": [
+      "lucas",
+      "jordan"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 3,
+    "managers": [
+      "calum",
+      "james"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 3,
+    "managers": [
+      "pierce",
+      "keith"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 3,
+    "managers": [
+      "alex",
+      "al"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 3,
+    "managers": [
+      "lucas",
+      "braden"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 3,
+    "managers": [
+      "jordan",
+      "will"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 4,
+    "managers": [
+      "calum",
+      "alex"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 4,
+    "managers": [
+      "lucas",
+      "pierce"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 4,
+    "managers": [
+      "jordan",
+      "james"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 4,
+    "managers": [
+      "will",
+      "keith"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 4,
+    "managers": [
+      "braden",
+      "al"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 5,
+    "managers": [
+      "jordan",
+      "calum"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 5,
+    "managers": [
+      "will",
+      "lucas"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 5,
+    "managers": [
+      "braden",
+      "alex"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 5,
+    "managers": [
+      "al",
+      "pierce"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 5,
+    "managers": [
+      "keith",
+      "james"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 6,
+    "managers": [
+      "will",
+      "calum"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 6,
+    "managers": [
+      "jordan",
+      "braden"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 6,
+    "managers": [
+      "lucas",
+      "al"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 6,
+    "managers": [
+      "alex",
+      "keith"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 6,
+    "managers": [
+      "pierce",
+      "james"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 7,
+    "managers": [
+      "braden",
+      "calum"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 7,
+    "managers": [
+      "will",
+      "al"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 7,
+    "managers": [
+      "jordan",
+      "keith"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 7,
+    "managers": [
+      "lucas",
+      "james"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 7,
+    "managers": [
+      "alex",
+      "pierce"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 8,
+    "managers": [
+      "calum",
+      "al"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 8,
+    "managers": [
+      "keith",
+      "braden"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 8,
+    "managers": [
+      "james",
+      "will"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 8,
+    "managers": [
+      "pierce",
+      "jordan"
+    ]
+  },
+  {
+    "segment": 3,
+    "week": 8,
+    "managers": [
+      "alex",
+      "lucas"
+    ]
+  }
+]
