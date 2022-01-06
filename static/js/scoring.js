@@ -9,10 +9,10 @@
                 $.each(team.players, function(_, player) {
                     var player_score = format_score(player.score_to_par)
                     var score_html =
-                        '<div class="breakdown-table-row"><div class="breakdown-player"><h4>' + player.player_name +
-                        '</h4></div><div class="breakdown-pos"><h4>' + player.position +
-                        '</h4></div><div class="breakdown-score"><h4>' + player_score +
-                        '</h4></div><div class="breakdown-thru"><h4>' + player.thru +
+                        '<div class="breakdown-table-row"><div class="breakdown-player"><h4 class="scoring-table-info">' + player.player_name +
+                        '</h4></div><div class="breakdown-pos"><h4 class="scoring-table-info">' + player.position +
+                        '</h4></div><div class="breakdown-score"><h4 class="scoring-table-info">' + player_score +
+                        '</h4></div><div class="breakdown-thru"><h4 class="scoring-table-info">' + player.thru +
                         '</h4></div></div>';
                     var team_div = "#" + team.manager;
                     // console.log(team_div);
