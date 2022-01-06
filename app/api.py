@@ -11,12 +11,8 @@ from app.data_collection import scrape_live_leaderboard, get_field_json
 from fastapi_utils.tasks import repeat_every
 
 # Our app
-app = FastAPI()
+app = FastAPI()# deployment
 
-# expose static files (js)
-app.mount("/static", StaticFiles(directory="static"), name="static")
-
-# deployment
 origins = config('ALLOWED_HOSTS', cast=Csv())
 
 app.add_middleware(
@@ -26,6 +22,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# expose static files (js)
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
 
 # Intervals for scheduled tasks (in mins)
 leaderboard_scrape_interval = config("LEADERBOARD_SCRAPE_INTERVAL", cast=int)
