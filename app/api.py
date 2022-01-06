@@ -5,7 +5,7 @@ from fastapi.staticfiles import StaticFiles
 from decouple import config, Csv
 
 from app.database import get_tournament_name, get_team_starting_lineups, get_team_by_manager, update_active_event
-from app.database import get_player_score_by_name, insert_player_scores, update_field_this_week
+from app.database import get_player_score_by_name, insert_player_scores, update_field_this_week, get_matchups
 from app.data_collection import scrape_live_leaderboard, get_field_json
 
 from fastapi_utils.tasks import repeat_every
@@ -35,6 +35,10 @@ field_update_interval = config("FIELD_UPDATE_INTERVAL", cast=int)
 display_old_tournament_leaderboard = config("DISPLAY_OLD_TOURNAMENT_LEADERBOARD", cast=bool)
 old_tournament_name = config("OLD_TOURNAMENT_NAME")
 old_tournament_url = config("OLD_TOURNAMENT_URL")
+
+# Current segment number and week number
+current_segment = config("SEGMENT", cast=int)
+current_week = config("WEEK", cast=int)
 
 # tasks to start immediately when app starts up and run every {SCRAPE_INTERVAL} minutes
 @app.on_event("startup")
@@ -92,12 +96,18 @@ def get_root():
     }
 
 
+@app.get("/api/v1/matchups_test")
+async def matchups():
+    return {"matchups": get_matchups(current_segment, current_week)}
+    
+
+
 @app.get("/api/v1/scoreboard")
 async def scoreboard():
     team_lineups = get_team_starting_lineups()
     tourney_name = get_tournament_name()
     
-    response = {"teams": []}
+    response = {"teams": [], "matchup_base_ids": {}}
     
     for team in team_lineups:
         player_scores = []
@@ -122,7 +132,11 @@ async def scoreboard():
         team["players"] = player_scores
         team["team_score"] = team_score
 
-        response["teams"].append(team)    
+        response["teams"].append(team) 
+    
+    for i, matchup in enumerate(get_matchups(current_segment, current_week)):
+        for j, manager in enumerate(matchup["managers"]):
+            response["matchup_base_ids"][manager] = f"m{i}-p{j}"
     
     return response
     

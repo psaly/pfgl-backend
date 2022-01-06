@@ -25,4 +25,3 @@ for segment in range(1, 4):
             line_num+=1
             
 print(dumps(output))
-        

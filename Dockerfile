@@ -11,6 +11,9 @@ ENV FIELD_UPDATE_INTERVAL=180
 ENV DISPLAY_OLD_TOURNAMENT_LEADERBOARD=True
 ENV OLD_TOURNAMENT_URL="https://www.espn.com/golf/leaderboard/_/tournamentId/401243418"
 ENV OLD_TOURNAMENT_NAME="PGA Championship"
+ENV SEGMENT=1
+ENV WEEK=0
+
 
 RUN pip install pipenv
 

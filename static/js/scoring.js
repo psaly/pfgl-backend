@@ -14,9 +14,15 @@
                         '</h4></div><div class="breakdown-score"><h4 class="scoring-table-info">' + player_score +
                         '</h4></div><div class="breakdown-thru"><h4 class="scoring-table-info">' + player.thru +
                         '</h4></div></div>';
-                    var team_div = "#" + team.manager;
-                    // console.log(team_div);
+                    let team_div = "#" + data.matchup_base_ids[team.manager] + "-table";
+                    console.log(team_div);
                     $(team_div).append(score_html);
+
+                    /*
+                    m0-p0-info      m0-p1-info
+                    m0-p0-table     m0-p1-info
+
+                    */
                 });
             });
         }

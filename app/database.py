@@ -12,7 +12,18 @@ teams_collection = database.get_collection('teams')
 player_scores_collection = database.get_collection('player_scores')
 tournament_collection = database.get_collection('tournaments')
 field_collection = database.get_collection('field')
+matchup_collection = database.get_collection('matchups')
 
+def get_matchups(segment: int, week: int) -> list[dict]:
+    """
+    segment 1-3
+    week 0-8
+    """
+    matchups = []
+    for matchup in matchup_collection.find({"segment": segment, "week": week}, {"_id": 0}):
+        matchups.append(matchup)
+    
+    return matchups
 
 
 def get_all_teams():
@@ -40,6 +51,8 @@ def get_team_starting_lineups() -> list:
                 "manager": 1,
                 "manager_name": 1,
                 "team_name": 1,
+                "logo_url": 1,
+                "record": 1,
                 "roster": {
                     "$filter": {
                         "input": "$roster", 
