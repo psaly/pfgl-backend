@@ -107,7 +107,9 @@ async def scoreboard():
     team_lineups = get_team_starting_lineups()
     tourney_name = get_tournament_name()
     
-    response = {"teams": [], "matchup_base_ids": {}}
+    response = {"teams": [], "matchup_base_ids": {}, "matchup_winning": {}}
+    team_scores = {}
+    team_logo_urls = {}
     
     for team in team_lineups:
         player_scores = []
@@ -127,14 +129,30 @@ async def scoreboard():
         player_scores.sort(key=lambda x:x["score_to_par"])
         counting_scores = config("COUNTING_SCORES", cast=int)
         team_score = sum([x["score_to_par"] for x in player_scores[:counting_scores]])
-                
+                 
         del team["roster"]
         team["players"] = player_scores
         team["team_score"] = team_score
+        
+        team_scores[team["manager"]] = team_score
+        team_logo_urls[team["manager"]] = team["logo_url"]
 
-        response["teams"].append(team) 
+        response["teams"].append(team)
     
     for i, matchup in enumerate(get_matchups(current_segment, current_week)):
+        # determine who is winning
+        if team_scores[matchup["managers"][0]] <= team_scores[matchup["managers"][1]]:
+            response["matchup_winning"][f"m{i}"] = {
+                "name": matchup["managers"][0], 
+                "logo_url": team_logo_urls[matchup["managers"][0]]
+            }
+        else:
+            response["matchup_winning"][f"m{i}"] = {
+                "name": matchup["managers"][1], 
+                "logo_url": team_logo_urls[matchup["managers"][1]]
+            }
+        
+        # build string prefixes for identifying matchup divs
         for j, manager in enumerate(matchup["managers"]):
             response["matchup_base_ids"][manager] = f"m{i}-p{j}"
     
