@@ -34,11 +34,10 @@ def scrape_live_leaderboard(url="https://www.espn.com/golf/leaderboard") -> list
     
     worst_score = -1000  # placeholder
 
+    pos_offset = 1  # will be changed to 2 if we see there are movement arrows in the table
     # loop through all tds
     tds = soup.select('td')
     for i in range(len(tds)):
-        # might not need to check this every time but why not for now
-        pos_offset = 1
         try:
             for child in tds[i].findChildren():
                 if child.has_attr('class') and child['class'][0] == 'MovementArrow':
