@@ -42,7 +42,7 @@ current_week = config("WEEK", cast=int)
 
 # tasks to start immediately when app starts up and run every {SCRAPE_INTERVAL} minutes
 @app.on_event("startup")
-@repeat_every(seconds=60 * leaderboard_scrape_interval)  
+@repeat_every(seconds=60 * leaderboard_scrape_interval)
 def leaderboard_scraper() -> None:
     """
     Scheduled task to be run in fastapi threadpool. 
