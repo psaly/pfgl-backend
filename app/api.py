@@ -170,69 +170,10 @@ def team_db_test(manager: str):
 # THIS IS REALLY BAD TO HAVE AS A GET BUT IT'S FOR TESTING
 # Use repeated task instead eventually!!!
 @app.get("/api/v1/scraping_test")
-def update_live_scores():
+def get_live_scores():
     """
     For testing scraping code. DOES NOT ADD TO DATABASE!!!!!
     """
-    player_scores = scrape_live_leaderboard()
+    player_scores = scrape_live_leaderboard(url=old_tournament_url)
     
     return player_scores
-
-
-# HARDCODING TESTING
-@app.get("/api/v1/scoreboard_hardcoded")
-async def scoreboard_hardcoded():
-    return {
-        "teams":
-            {
-                "james":
-                    {
-                        "players":
-                            [
-                                {
-                                    "name": "Justin Thomas",
-                                    "score_to_par": "-14",
-                                    "position": "2",
-                                    "thru": "F"
-                                },
-                                {
-                                    "name": "Webb Simpson",
-                                    "score_to_par": "-9",
-                                    "position": "T8",
-                                    "thru": "F"
-                                },
-                                {
-                                    "name": "Sungjae Im",
-                                    "score_to_par": "-8",
-                                    "position": "T12",
-                                    "thru": "F"
-                                },
-                                {
-                                    "name": "Sung Kang",
-                                    "score_to_par": "E",
-                                    "position": "T52",
-                                    "thru": "F"
-                                },
-                                {
-                                    "name": "Joel Dahmen",
-                                    "score_to_par": "E",
-                                    "position": "T52",
-                                    "thru": "F"
-                                },
-                                {
-                                    "name": "Guido Migliozzi",
-                                    "score_to_par": "+1",
-                                    "position": "T58",
-                                    "thru": "F"
-                                },
-                                {
-                                    "name": "Mac Carter",
-                                    "score_to_par": "+8",
-                                    "position": "72",
-                                    "thru": "F"
-                                }
-                            ],
-                        "team_score": "-31"
-                    }
-            }
-    }

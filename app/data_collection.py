@@ -46,6 +46,7 @@ def scrape_live_leaderboard(url="https://www.espn.com/golf/leaderboard") -> list
                     pos = None
                     score = None
                     thru = 'F' if final else tds[i+3].text
+                    today = tds[i+4].text if final else tds[i+2].text
                     player = child.text
                     
                     score_text = tds[i+1].text
@@ -73,6 +74,7 @@ def scrape_live_leaderboard(url="https://www.espn.com/golf/leaderboard") -> list
                                         "player_name": player, 
                                         "position": pos, 
                                         "score_to_par": score, 
+                                        "today": today,
                                         "thru": thru
                                         })                                  
         except KeyError:
@@ -86,7 +88,7 @@ def scrape_live_leaderboard(url="https://www.espn.com/golf/leaderboard") -> list
     for player in all_players:
         if player["score_to_par"] is None:
             player["score_to_par"] = cut_score
-        
+    
     return all_players
             
     
