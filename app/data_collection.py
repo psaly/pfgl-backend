@@ -46,7 +46,7 @@ def scrape_live_leaderboard(url="https://www.espn.com/golf/leaderboard") -> list
                     pos = None
                     score = None
                     thru = 'F' if final else tds[i+3].text
-                    today = tds[i+4].text if final else tds[i+2].text
+                    today = tds[i+5].text if final else tds[i+2].text
                     player = child.text
                     
                     score_text = tds[i+1].text

@@ -4,7 +4,7 @@ from fastapi.staticfiles import StaticFiles
 
 from decouple import config, Csv
 
-from app.database import get_tournament_name, get_team_starting_lineups, get_team_by_manager, update_active_event
+from app.database import get_tournament_details, get_team_starting_lineups, get_team_by_manager, update_active_event
 from app.database import get_player_score_by_name, insert_player_scores, update_field_this_week, get_matchups
 from app.data_collection import scrape_live_leaderboard, get_field_json
 
@@ -105,9 +105,10 @@ async def matchups():
 @app.get("/api/v1/scoreboard")
 async def scoreboard():
     team_lineups = get_team_starting_lineups()
-    tourney_name = get_tournament_name()
+    tourney_details = get_tournament_details()
+    tourney_name = tourney_details["tournament_name"]
     
-    response = {"teams": [], "matchup_base_ids": {}, "matchup_winning": {}}
+    response = {"teams": [], "matchup_base_ids": {}, "matchup_winning": {}, "tournament_details": tourney_details}
     team_scores = {}
     team_logo_urls = {}
     

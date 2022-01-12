@@ -99,6 +99,12 @@ def get_tournament_name() -> str:
         return tourney["tournament_name"]
 
 
+def get_tournament_details() -> dict:
+    tourney = tournament_collection.find_one({"active": True}, {"_id": 0})
+    if tourney:
+        return tourney
+
+
 def update_field_this_week(players: list[dict]) -> str:
     """
     Insert players from this week's field and activate current event

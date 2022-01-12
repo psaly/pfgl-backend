@@ -4,11 +4,16 @@
         dataType: "json",
         url: req_url,
         success: function(data) {
-            // console.log(data);
+
+            $("#tournament-name").html('<h1 class="page-mainheading">' + data.tournament_details.tournament_name + '</h1>')
+            $("#course-name").html('<h2 class="tournament-info-h2">'+ data.tournament_details.course_name +'</h2>')
+            $("course-info").html('<h4 class="leaderboard is--left">' + data.tournament_details.course_details + '<br></h4>')
+            $("#tournament-date").html('<h4 class="leaderboard">' + data.tournament_details.dates + '<br></h4>')
+
             $.each(data.teams, function(_, team) {
                 // #m0-p0-info
                 let matchup_info_div = `#${data.matchup_base_ids[team.manager]}-info`;
-                var info_html = '<div class="scoring-team-left"><div class="scoring-team-img"><img src="' +
+                var info_html = '<div class="scoring-team-left"><div class="scoring-team-img"><img src="'+
                     team.logo_url +
                     '" loading="lazy" alt="" class="image-2"></div><h2 class="scoring-team-name">' +
                     team.manager_name +
@@ -17,8 +22,8 @@
                     '</h4></div><div class="scoring-team-right"><div class="scoring-team-topar"><h2 class="scoring-team-topar-h2">' +
                     format_score(team.team_score) +
                     '</h2></div></div>';
-                console.log(matchup_info_div);
-                $(matchup_info_div).append(info_html);
+                    
+                $(matchup_info_div).html(info_html);
 
                 $.each(team.players, function(_, player) {
                     let player_score = format_score(player.score_to_par)
@@ -29,6 +34,8 @@
                         player.position +
                         '</h4></div><div class="breakdown-score"><h4 class="scoring-table-info">' +
                         player_score +
+                        '</h4></div><div class="breakdown-round"><h4 class="scoring-table-info">' +
+                        player.today +
                         '</h4></div><div class="breakdown-thru"><h4 class="scoring-table-info">' +
                         player.thru +
                         '</h4></div></div>';
@@ -44,10 +51,15 @@
             for (let i = 0; i < 5; i++) {
                 let matchup_winning_div = `#m${i}-win`;
                 let winning_url = data.matchup_winning[`m${i}`]["logo_url"];
-                var winning_html =
-                    '<h4 class="scoring-winning-h4">WINNING</h4><div class="scoring-team-img is--center"><img src="' +
+                let lowercase_winning_name = data.matchup_winning[`m${i}`]["name"];
+                // capitalize name
+                let winning_name = lowercase_winning_name[0].toUpperCase() + lowercase_winning_name.slice(1);
+
+                var winning_html = '<div class="scoring-team-img is--center"><img src="' +
                     winning_url +
-                    '" loading="lazy" alt="" class="image-2"></div>';
+                    '" loading="lazy" alt="" class="image-2"></div><h4 class="scoring-winning-name">' +
+                    winning_name + 
+                    '</h4></div>';
                 $(matchup_winning_div).append(winning_html);
             }
         }
