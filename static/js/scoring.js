@@ -63,9 +63,9 @@
 
                 var winning_html = '<div class="scoring-team-img is--center"><img src="' +
                     winning_url +
-                    '" loading="lazy" alt="" class="image-2"></div><h4 class="scoring-winning-name">' +
+                    '" loading="lazy" alt="" class="image-2"></div><h2 class="scoring-winning-name">' +
                     winning_name + 
-                    '</h4></div>';
+                    '</h2></div>';
                 $(matchup_winning_div).append(winning_html);
             }
         }
