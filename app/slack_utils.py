@@ -12,20 +12,6 @@ def valid_request(slack_form, channel: SlackChannel):
     return slack_form['token'] == channel.token and slack_form['team_id'] == channel.team_id
     
     
-    
-    slack_res = {
-        "blocks": [
-            {
-                "type": "header",
-                "text": {
-                    "type": "plain_text",
-                    "text": tourney_name
-                }
-            }
-        ]
-    }
-    
-    
 def build_scores_response(team_scoring: list[dict], tourney_name: str) -> dict:
     """
     Return data for Slack to display
@@ -80,7 +66,8 @@ def build_scores_response(team_scoring: list[dict], tourney_name: str) -> dict:
             {
                 "type": "divider"
             }
-	    ]
+	    ],
+        "response_type": "in_channel"
     }
 
     return slack_res
@@ -91,7 +78,6 @@ def build_leaderboard_response(team_scoring: list[dict], tourney_name: str) -> d
     Return data for Slack to display
     """
     scores_string = ''
-    breakdown_string = ''
     
     for i, score_data in enumerate(team_scoring):
         scores_string += '*' + score_data["manager_name"] + '*: `' + _display_score_to_par(score_data["team_score"]) + '`'
@@ -121,7 +107,8 @@ def build_leaderboard_response(team_scoring: list[dict], tourney_name: str) -> d
             {
                 "type": "divider"
             }
-	    ]
+	    ],
+        "response_type": "in_channel"
     }
 
     return slack_res
