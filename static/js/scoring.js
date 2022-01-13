@@ -5,10 +5,10 @@
         url: req_url,
         success: function(data) {
 
-            $("#tournament-name").html('<h1 class="page-mainheading">' + data.tournament_details.tournament_name + '</h1>')
-            $("#course-name").html('<h2 class="tournament-info-h2">'+ data.tournament_details.course_name +'</h2>')
-            $("#course-info").html('<h4 class="leaderboard is--left">' + data.tournament_details.course_details + '<br></h4>')
-            $("#tournament-date").html('<h4 class="leaderboard">' + data.tournament_details.dates + '<br></h4>')
+            $("#tournament-name").html('<h1 class="page-mainheading">' + data.tournament_details.tournament_name + '</h1>');
+            $("#course-name").html('<h2 class="tournament-info-h2">'+ data.tournament_details.course_name +'</h2>');
+            $("#course-info").html('<h4 class="leaderboard is--left">' + data.tournament_details.course_details + '<br></h4>');
+            $("#tournament-date").html('<h4 class="leaderboard">' + data.tournament_details.dates + '<br></h4>');
             
             $.each(data.teams, function(_, team) {
                 // #m0-p0-info
@@ -72,10 +72,10 @@
             // adjust for mobile
             let mobile_breakpoint = 479;
             if ($( window ).width() <= mobile_breakpoint){
-                $(".breakdown-round").addClass("is--hidden")
+                $(".breakdown-round").addClass("is--hidden");
             } 
             else{
-                $(".breakdown-round").removeClass("is--hidden")
+                $(".breakdown-round").removeClass("is--hidden");
             }
         }
     });
