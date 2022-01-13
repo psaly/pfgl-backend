@@ -68,6 +68,15 @@
                     '</h2></div>';
                 $(matchup_winning_div).append(winning_html);
             }
+
+            // adjust for mobile
+            let mobile_breakpoint = 479;
+            if ($( window ).width() <= mobile_breakpoint){
+                $(".breakdown-round").addClass("is--hidden")
+            } 
+            else{
+                $(".breakdown-round").removeClass("is--hidden")
+            }
         }
     });
 })();
