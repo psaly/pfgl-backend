@@ -9,6 +9,7 @@ client = MongoClient(mongo_connection_details)
 database = client.pfgl
 
 teams_collection = database.get_collection('teams')
+kwp_teams_collection = database.get_collection('kwpteams')
 player_scores_collection = database.get_collection('player_scores')
 tournament_collection = database.get_collection('tournaments')
 field_collection = database.get_collection('field')
@@ -40,31 +41,53 @@ def get_team_by_manager(manager_name: str):
     
 
 # Players have optional {dg_name} attribute for matching with datagolf
-def get_team_starting_lineups() -> list:
+def get_team_starting_lineups(kwp=False) -> list:
     """
     Return list of teams with only starting players included
     """
-    return teams_collection.aggregate(
-        [{
-            "$project": {
-                "_id": 0,
-                "manager": 1,
-                "manager_name": 1,
-                "team_name": 1,
-                "logo_url": 1,
-                "record": 1,
-                "roster": {
-                    "$filter": {
-                        "input": "$roster", 
-                        "as": "player", 
-                        "cond": {
-                            "$eq": ["$$player.starter", True]
+    if not kwp:
+        return teams_collection.aggregate(
+            [{
+                "$project": {
+                    "_id": 0,
+                    "manager": 1,
+                    "manager_name": 1,
+                    "team_name": 1,
+                    "logo_url": 1,
+                    "record": 1,
+                    "roster": {
+                        "$filter": {
+                            "input": "$roster", 
+                            "as": "player", 
+                            "cond": {
+                                "$eq": ["$$player.starter", True]
+                            }
                         }
                     }
                 }
-            }
-        }]
-    )
+            }]
+        )
+    else:
+        return kwp_teams_collection.aggregate(
+            [{
+                "$project": {
+                    "_id": 0,
+                    "manager": 1,
+                    "manager_name": 1,
+                    "roster": {
+                        "$filter": {
+                            "input": "$roster", 
+                            "as": "player", 
+                            "cond": {
+                                "$eq": ["$$player.starter", True]
+                            }
+                        }
+                    }
+                }
+            }]    
+        )
+    
+
 
 
 def get_player_score_by_name(player_name: str, tourney_name: str) -> dict:
@@ -134,25 +157,4 @@ def update_active_event(tourney_name: str) -> dict:
     print(f"CURRENT ACTIVE TOURNAMENT UPDATE: {tourney_name}.")
     return success
     
-    
-
-# def _parse_team_data(team) -> dict:
-#     """
-#     helper for rosters collection to parse internal mongo ObjectId
-#     """
-#     # roster is optional right now
-#     roster = []
-#     try:
-#         roster = team["roster"]
-#     except KeyError as e:
-#         pass
-    
-#     return {
-#         # parse mongo internal ObjectId
-#         "id": str(team["_id"]),
-#         "manager": team["manager"],
-#         "manager_name": team["manager_name"],
-#         "team_name": team["team_name"],
-#         "roster": team["roster"]
-#     }
     

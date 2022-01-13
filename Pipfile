@@ -11,6 +11,7 @@ pymongo = "*"
 beautifulsoup4 = "*"
 fastapi-utils = "*"
 python-decouple = "*"
+python-multipart = "*"
 
 [dev-packages]
 

@@ -3,6 +3,9 @@ __author__ = 'piercesaly'
 import requests
 from bs4 import BeautifulSoup
 
+PFGL_CUT_PENALTY = 5
+KWP_CUT_PENALTY = 2
+
 def get_field_json() -> list[dict]:
     """
     Get this week's field from dg. Return list [{player_obj}, etc.]
@@ -74,6 +77,7 @@ def scrape_live_leaderboard(url="https://www.espn.com/golf/leaderboard") -> list
                                         "player_name": player, 
                                         "position": pos, 
                                         "score_to_par": score, 
+                                        "kwp_score_to_par": score,
                                         "today": today,
                                         "thru": thru
                                         })                                  
@@ -82,12 +86,12 @@ def scrape_live_leaderboard(url="https://www.espn.com/golf/leaderboard") -> list
         except IndexError:
             print(f"**INDEX ERROR--tournament is probably not live** {tds[i]}")
     
-    cut_score = worst_score + 5
     
     # update all players who MC/WD/DQ score to the cut placeholder
     for player in all_players:
         if player["score_to_par"] is None:
-            player["score_to_par"] = cut_score
+            player["score_to_par"] = worst_score + PFGL_CUT_PENALTY
+            player["kwp_score_to_par"] = worst_score + KWP_CUT_PENALTY
     
     return all_players
             

@@ -1,12 +1,13 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from decouple import config, Csv
 
-from app.database import get_tournament_details, get_team_starting_lineups, get_team_by_manager, update_active_event
+from app.database import get_tournament_details, get_team_starting_lineups, update_active_event
 from app.database import get_player_score_by_name, insert_player_scores, update_field_this_week, get_matchups
 from app.data_collection import scrape_live_leaderboard, get_field_json
+import app.slack_utils as slack_utils
 
 from fastapi_utils.tasks import repeat_every
 
@@ -95,13 +96,6 @@ def get_root():
         "message": "Welcome to the PFGL!"
     }
 
-
-@app.get("/api/v1/matchups_test")
-async def matchups():
-    return {"matchups": get_matchups(current_segment, current_week)}
-    
-
-
 @app.get("/api/v1/scoreboard")
 async def scoreboard():
     team_lineups = get_team_starting_lineups()
@@ -158,15 +152,91 @@ async def scoreboard():
             response["matchup_base_ids"][manager] = f"m{i}-p{j}"
     
     return response
+
+# Slack endpoints
+@app.post('/api/v1/kwp/scores')
+async def kwp_scores(req: Request):
+    form = await req.form()
     
-# Pymongo is synchronous! Maybe use Motor driver for async in the future!?
-@app.get("/api/v1/team/{manager}")
-def team_db_test(manager: str):
-    team = get_team_by_manager(manager)
-    if team:
-        return team
+    if not slack_utils.valid_request(form, slack_utils.SlackChannel.KWP):
+        raise HTTPException(status_code=400, detail="Invalid token.") 
     
-    return {"message": "manager does not exist"}
+    
+    tourney_details = get_tournament_details()
+    tourney_name = tourney_details["tournament_name"]
+    
+    team_lineups = get_team_starting_lineups(kwp=True)
+    
+    team_scoring = []
+    
+    for team in team_lineups:
+        player_scores = []
+        for player in team["roster"]:
+            score = get_player_score_by_name(player["name"], tourney_name)
+            if score:
+                del score["tournament_name"]
+                player_scores.append(score)
+            # This player could not be found on the leaderboard
+            else:
+                player_scores.append({
+                    "player_name": player["name"],
+                    "position": '???',
+                    "score_to_par": 100,
+                    "thru": '???'
+                })
+        player_scores.sort(key=lambda x:x["kwp_score_to_par"])
+        
+        # top 4 count
+        team_score = sum([x["kwp_score_to_par"] for x in player_scores[:4]])
+        
+        team_scoring.append({"manager_name": team['manager_name'], "team_score": team_score, "player_scores": player_scores})
+    
+    team_scoring.sort(key=lambda x:x["team_score"])
+
+    return slack_utils.build_scores_response(team_scoring, tourney_name)
+    
+    
+# Some duped code in these 2 but too lazy to fix now
+@app.post('/api/v1/kwp/leaderboard')
+async def kwp_scores(req: Request):
+    form = await req.form()
+    
+    if not slack_utils.valid_request(form, slack_utils.SlackChannel.KWP):
+        raise HTTPException(status_code=400, detail="Invalid token.") 
+    
+    
+    tourney_details = get_tournament_details()
+    tourney_name = tourney_details["tournament_name"]
+    
+    team_lineups = get_team_starting_lineups(kwp=True)
+    
+    team_scoring = []
+    
+    for team in team_lineups:
+        player_scores = []
+        for player in team["roster"]:
+            score = get_player_score_by_name(player["name"], tourney_name)
+            if score:
+                del score["tournament_name"]
+                player_scores.append(score)
+            # This player could not be found on the leaderboard
+            else:
+                player_scores.append({
+                    "player_name": player["name"],
+                    "position": '???',
+                    "score_to_par": 100,
+                    "thru": '???'
+                })
+        player_scores.sort(key=lambda x:x["kwp_score_to_par"])
+        
+        # top 4 count
+        team_score = sum([x["kwp_score_to_par"] for x in player_scores[:4]])
+        
+        team_scoring.append({"manager_name": team['manager_name'], "team_score": team_score, "player_scores": player_scores})
+    
+    team_scoring.sort(key=lambda x:x["team_score"])
+
+    return slack_utils.build_leaderboard_response(team_scoring, tourney_name)
 
 # THIS IS REALLY BAD TO HAVE AS A GET BUT IT'S FOR TESTING
 # Use repeated task instead eventually!!!
