@@ -1,0 +1,1055 @@
+MongoDB shell version v4.4.11
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("7f01299c-340b-44d3-bfc5-6a0ad5f72655") }
+MongoDB server version: 4.4.11
+---
+The server generated these startup warnings when booting: 
+        2022-01-12T23:03:40.514+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> use pfgl[3G[Juse pfgl[11G
+switched to db pfgl
+> db.player)[3G[Jdb.player[12G_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "p
+[1G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "pl[2G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "pla[3G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "play[4G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "playe[5G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player[6G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_[7G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_n[8G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_na[9G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_nam[10G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name[11G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name"[12G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name":[13G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": [14G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1[15G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1,[16G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1, [17G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1, "[18G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1, "t[19G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1, "th[20G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1, "thr[21G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1, "thru[22G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1, "thru"[23G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1, "thru":[24G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1, "thru": [25G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1, "thru": 1[26G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1, "thru": [25G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1, "thru":[24G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1, "thru"[23G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1, "thru[22G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1, "thr[21G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1, "th[20G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1, "t[19G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1, "[18G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1, [17G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1,[16G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": 1[15G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name": [14G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name":[13G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name"[12G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_name[11G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_nam[10G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_na[9G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_n[8G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player_[7G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "player[6G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "playe[5G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "play[4G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "pla[3G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "pl[2G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "p
+[1G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "[80G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, [79G"[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "t
+[1G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "th[2G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thr[3G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru[4G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru"[5G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru":[6G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": [7G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0[8G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0,[9G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0, [10G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0,[9G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0[8G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0}[9G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[10G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[10G
+uncaught exception: SyntaxError: missing ) after argument list :
+@(shell):1:39
+> [3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[10G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[9G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, [1;34m{[0m"_id": 0, "thru": 0})[8G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[7G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[6G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[5G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[4G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[3G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[2G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1G[1A[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[80G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[79G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[78G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[77G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[76G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[75G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[74G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[73G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[72G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[71G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[70G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[69G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0[1;34m}[0m)[1A[68G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[67G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[66G[3G[Jdb.player_scores.find[1;34m([0m"tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[65G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[64G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[63G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[62G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[61G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[60G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[59G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[58G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[57G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[56G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[55G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[54G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[53G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[52G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[51G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[50G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[49G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[48G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[47G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[46G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[45G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[44G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[43G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[42G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[41G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[40G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[39G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[38G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[37G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[36G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[35G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[34G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[33G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[32G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[31G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[30G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[29G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[28G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[27G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[26G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[25G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"[1;34m}[0m, {"_id": 0, "thru": 0})[1A[24G[3G[Jdb.player_scores.find("tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[25G[3G[Jdb.player_scores.find({"tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[1A[26G[3G[Jdb.player_scores.find({"tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[11G
+{ "tournament_name" : "Sony Open in Hawaii", "player_name" : "Brian Harman", "position" : "12:10 PM", "score_to_par" : -995, "today" : "" }
+{ "tournament_name" : "Sony Open in Hawaii", "player_name" : "Kramer Hickok", "position" : "12:10 PM", "score_to_par" : -995, "today" : "" }
+{ "tournament_name" : "Sony Open in Hawaii", "player_name" : "Hank Lebioda", "position" : "12:10 PM", "score_to_par" : -995, "today" : "" }
+{ "tournament_name" : "Sony Open in Hawaii", "player_name" : "Tom Hoge", "position" : "12:10 PM", "score_to_par" : -995, "today" : "" }
+{ "tournament_name" : "Sony Open in Hawaii", "player_name" : "Sam Ryder", "position" : "12:10 PM", "score_to_par" : -995, "today" : "" }
+{ "tournament_name" : "Sony Open in Hawaii", "player_name" : "Denny McCarthy", "position" : "12:10 PM", "score_to_par" : -995, "today" : "" }
+{ "tournament_name" : "Sony Open in Hawaii", "player_name" : "Sepp Straka", "position" : "12:20 PM", "score_to_par" : -995, "today" : "" }
+{ "tournament_name" : "Sony Open in Hawaii", "player_name" : "Roger Sloan", "position" : "12:20 PM", "score_to_par" : -995, "today" : "" }
+{ "tournament_name" : "Sony Open in Hawaii", "player_name" : "Cameron Percy", "position" : "12:20 PM", "score_to_par" : -995, "today" : "" }
+{ "tournament_name" : "Sony Open in Hawaii", "player_name" : "Russell Knox", "position" : "12:20 PM", "score_to_par" : -995, "today" : "" }
+{ "tournament_name" : "Sony Open in Hawaii", "player_name" : "Andrew Putnam", "position" : "12:20 PM", "score_to_par" : -995, "today" : "" }
+{ "tournament_name" : "Sony Open in Hawaii", "player_name" : "Vaughn Taylor", "position" : "12:20 PM", "score_to_par" : -995, "today" : "" }
+{ "tournament_name" : "Sony Open in Hawaii", "player_name" : "Parker McLachlin", "position" : "12:30 PM", "score_to_par" : -995, "today" : "" }
+{ "tournament_name" : "Sony Open in Hawaii", "player_name" : "Harry Higgs", "position" : "12:30 PM", "score_to_par" : -995, "today" : "" }
+{ "tournament_name" : "Sony Open in Hawaii", "player_name" : "Brendan Steele", "position" : "12:30 PM", "score_to_par" : -995, "today" : "" }
+{ "tournament_name" : "Sony Open in Hawaii", "player_name" : "Keegan Bradley", "position" : "12:30 PM", "score_to_par" : -995, "today" : "" }
+{ "tournament_name" : "Sony Open in Hawaii", "player_name" : "Brian Stuard", "position" : "12:30 PM", "score_to_par" : -995, "today" : "" }
+{ "tournament_name" : "Sony Open in Hawaii", "player_name" : "Maverick McNealy", "position" : "12:30 PM", "score_to_par" : -995, "today" : "" }
+{ "tournament_name" : "Sony Open in Hawaii", "player_name" : "Tyler Duncan", "position" : "12:40 PM", "score_to_par" : -995, "today" : "" }
+{ "tournament_name" : "Sony Open in Hawaii", "player_name" : "Kevin Chappell", "position" : "12:40 PM", "score_to_par" : -995, "today" : "" }
+Type "it" for more
+> [3G[Jdb.player_scores.find({"tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0})[11G[1A[3G[Jdb.player_scores.find({"tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0}).[12G[1A[3G[Jdb.player_scores.find({"tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0}).t[13G[1A[3G[Jdb.player_scores.find({"tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0}).to[14G[1A[3G[Jdb.player_scores.find({"tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0}).toA[15G[1A[3G[Jdb.player_scores.find({"tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0}).toAr[16G[1A[3G[Jdb.player_scores.find({"tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0}).toArr[17G[1A[3G[Jdb.player_scores.find({"tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0}).toArra[18G[1A[3G[Jdb.player_scores.find({"tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0}).toArray[19G[1A[3G[Jdb.player_scores.find({"tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0}).toArray([20G[1A[3G[Jdb.player_scores.find({"tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0}).toArray()[21G[1A[3G[Jdb.player_scores.find({"tournament_name": "Sony Open in Hawaii"}, {"_id": 0, "thru": 0}).toArray()[21G
+[
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Brian Harman",
+		"position" : "12:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Kramer Hickok",
+		"position" : "12:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Hank Lebioda",
+		"position" : "12:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Tom Hoge",
+		"position" : "12:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Sam Ryder",
+		"position" : "12:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Denny McCarthy",
+		"position" : "12:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Sepp Straka",
+		"position" : "12:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Roger Sloan",
+		"position" : "12:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Cameron Percy",
+		"position" : "12:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Russell Knox",
+		"position" : "12:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Andrew Putnam",
+		"position" : "12:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Vaughn Taylor",
+		"position" : "12:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Parker McLachlin",
+		"position" : "12:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Harry Higgs",
+		"position" : "12:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Brendan Steele",
+		"position" : "12:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Keegan Bradley",
+		"position" : "12:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Brian Stuard",
+		"position" : "12:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Maverick McNealy",
+		"position" : "12:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Tyler Duncan",
+		"position" : "12:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Kevin Chappell",
+		"position" : "12:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Hudson Swafford",
+		"position" : "12:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Jim Herman",
+		"position" : "12:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Martin Trainer",
+		"position" : "12:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Brandt Snedeker",
+		"position" : "12:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Brian Gay",
+		"position" : "12:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Patton Kizzire",
+		"position" : "12:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Si Woo Kim",
+		"position" : "12:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Brendon Todd",
+		"position" : "12:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Branden Grace",
+		"position" : "12:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Keith Mitchell",
+		"position" : "12:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "K.H. Lee",
+		"position" : "1:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "J.T. Poston",
+		"position" : "1:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Wesley Bryan",
+		"position" : "1:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Abraham Ancer",
+		"position" : "1:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Harris English",
+		"position" : "1:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Billy Horschel",
+		"position" : "1:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Ryan Palmer",
+		"position" : "1:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Jim Furyk",
+		"position" : "1:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Adam Long",
+		"position" : "1:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Kevin Kisner",
+		"position" : "1:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Webb Simpson",
+		"position" : "1:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Hideki Matsuyama",
+		"position" : "1:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Erik van Rooyen",
+		"position" : "1:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Richy Werenski",
+		"position" : "1:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Michael Thompson",
+		"position" : "1:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Adam Schenk",
+		"position" : "1:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Kelly Kraft",
+		"position" : "1:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Bo Van Pelt",
+		"position" : "1:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "David Lipsky",
+		"position" : "1:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Sahith Theegala",
+		"position" : "1:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Austin Smotherman",
+		"position" : "1:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Aaron Rai",
+		"position" : "1:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Joshua Creel",
+		"position" : "1:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Takumi Kanaya",
+		"position" : "1:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Chad Ramey",
+		"position" : "1:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Nick Hardy",
+		"position" : "1:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Michael Gligic",
+		"position" : "1:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Cameron Young",
+		"position" : "1:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Andy Ogletree",
+		"position" : "1:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Callum Tarren",
+		"position" : "1:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Jared Sawada",
+		"position" : "1:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Trey Mullinax",
+		"position" : "1:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Brandon Wu",
+		"position" : "1:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Taylor Pendrith",
+		"position" : "1:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Paul Barjon",
+		"position" : "1:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Peter Jung (a)",
+		"position" : "1:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Alex Smalley",
+		"position" : "2:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Kevin Carll",
+		"position" : "2:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Dawie van der Walt",
+		"position" : "2:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Koichiro Ishika",
+		"position" : "2:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Stephan Jaeger",
+		"position" : "2:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Jared Wolfe",
+		"position" : "2:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Ryan Armour",
+		"position" : "4:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Scott Gutschewski",
+		"position" : "4:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Jerry Kelly",
+		"position" : "4:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Peter Malnati",
+		"position" : "4:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Chesson Hadley",
+		"position" : "4:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "J.J. Spaun",
+		"position" : "4:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "John Huh",
+		"position" : "5:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Kyle Stanley",
+		"position" : "5:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Camilo Villegas",
+		"position" : "5:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Christiaan Bezuidenhout",
+		"position" : "5:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Beau Hossler",
+		"position" : "5:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Bill Haas",
+		"position" : "5:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Rory Sabbatini",
+		"position" : "5:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Satoshi Kodaira",
+		"position" : "5:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Mark Hubbard",
+		"position" : "5:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Ryan Moore",
+		"position" : "5:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Chris Kirk",
+		"position" : "5:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Austin Cook",
+		"position" : "5:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Joel Dahmen",
+		"position" : "5:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Lucas Glover",
+		"position" : "5:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Nate Lashley",
+		"position" : "5:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Cam Davis",
+		"position" : "5:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Seamus Power",
+		"position" : "5:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Charles Howell III",
+		"position" : "5:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Matt Kuchar",
+		"position" : "5:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Jimmy Walker",
+		"position" : "5:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Luke Donald",
+		"position" : "5:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Stewart Cink",
+		"position" : "5:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Graeme McDowell",
+		"position" : "5:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Corey Conners",
+		"position" : "5:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Sungjae Im",
+		"position" : "5:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Matt Jones",
+		"position" : "5:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Marc Leishman",
+		"position" : "5:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Zach Johnson",
+		"position" : "5:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Jason Kokrak",
+		"position" : "5:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Robert Streb",
+		"position" : "5:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Kevin Na",
+		"position" : "5:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Cameron Smith",
+		"position" : "5:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Talor Gooch",
+		"position" : "5:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Kevin Tway",
+		"position" : "5:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Sung Kang",
+		"position" : "5:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "William McGirt",
+		"position" : "5:50 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Russell Henley",
+		"position" : "6:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Henrik Norlander",
+		"position" : "6:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Emiliano Grillo",
+		"position" : "6:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Greyson Sigg",
+		"position" : "6:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Bo Hoag",
+		"position" : "6:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Jim Knous",
+		"position" : "6:00 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "David Skinns",
+		"position" : "6:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Max McGreevy",
+		"position" : "6:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Keita Nakajima (a)",
+		"position" : "6:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Hayden Buckley",
+		"position" : "6:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Adam Svensson",
+		"position" : "6:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Justin Lower",
+		"position" : "6:10 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Curtis Thompson",
+		"position" : "6:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Brett Drewitt",
+		"position" : "6:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Chan Kim",
+		"position" : "6:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Kurt Kitayama",
+		"position" : "6:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Rikuya Hoshino",
+		"position" : "6:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Joseph Bramlett",
+		"position" : "6:20 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Ben Kohles",
+		"position" : "6:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Brent Grant",
+		"position" : "6:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Andrew Novak",
+		"position" : "6:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Davis Riley",
+		"position" : "6:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Haotong Li",
+		"position" : "6:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Chase Seiffert",
+		"position" : "6:30 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Seth Reeves",
+		"position" : "6:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Bruce Doucett",
+		"position" : "6:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Vince Whaley",
+		"position" : "6:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Garrett Okamura",
+		"position" : "6:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	},
+	{
+		"tournament_name" : "Sony Open in Hawaii",
+		"player_name" : "Dylan Wu",
+		"position" : "6:40 PM",
+		"score_to_par" : -995,
+		"today" : ""
+	}
+]
+> [3G[J[3G^C
+bye

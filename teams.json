@@ -8,7 +8,7 @@
     "roster": [
       {
         "name": "Jon Rahm",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Hideki Matsuyama",
@@ -28,15 +28,15 @@
       },
       {
         "name": "Keith Mitchell",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Ryan Palmer",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Matt Kuchar",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Adam Hadwin",
@@ -44,7 +44,7 @@
       },
       {
         "name": "Stewart Cink",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Lee Westwood",
@@ -55,8 +55,8 @@
         "starter": false
       },
       {
-        "name": "Charl Schwartzel",
-        "starter": false
+        "name": "Graeme McDowell",
+        "starter": true
       }
     ]
   },
@@ -69,11 +69,11 @@
     "roster": [
       {
         "name": "Justin Thomas",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Webb Simpson",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Sungjae Im",
@@ -85,7 +85,7 @@
       },
       {
         "name": "Russell Henley",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Kevin Streelman",
@@ -97,7 +97,7 @@
       },
       {
         "name": "Patton Kizzire",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Gary Woodland",
@@ -109,7 +109,7 @@
       },
       {
         "name": "Alex Smalley",
-        "starter": false
+        "starter": true
       },
       {
         "name": "J.J. Spaun",
@@ -117,7 +117,7 @@
       },
       {
         "name": "Sepp Straka",
-        "starter": false
+        "starter": true
       }
     ]
   },
@@ -130,7 +130,7 @@
     "roster": [
       {
         "name": "Viktor Hovland",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Abraham Ancer",
@@ -138,7 +138,7 @@
       },
       {
         "name": "Corey Conners",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Sergio Garcia",
@@ -154,11 +154,11 @@
       },
       {
         "name": "Emiliano Grillo",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Chad Ramey",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Matt Jones",
@@ -170,11 +170,12 @@
       },
       {
         "name": "Adam Schenk",
-        "starter": false
+        "starter": true
       },
       {
-        "name": "Vincent Whaley",
-        "starter": false
+        "name": "Vince Whaley",
+        "starter": true,
+        "dg_name": "Vincent Whaley"
       },
       {
         "name": "Mark Hubbard",
@@ -191,7 +192,7 @@
     "roster": [
       {
         "name": "Patrick Cantlay",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Cameron Smith",
@@ -223,23 +224,23 @@
       },
       {
         "name": "Chris Kirk",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Zach Johnson",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Tom Hoge",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Robert Streb",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Aaron Rai",
-        "starter": false
+        "starter": true
       }
     ]
   },
@@ -252,7 +253,7 @@
     "roster": [
       {
         "name": "Collin Morikawa",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Scottie Scheffler",
@@ -272,11 +273,11 @@
       },
       {
         "name": "Brian Harman",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Christiaan Bezuidenhout",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Jason Day",
@@ -284,23 +285,23 @@
       },
       {
         "name": "Garrick Higgo",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Stephan Jaeger",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Adam Long",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Denny McCarthy",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Cameron Young",
-        "starter": false
+        "starter": true
       }
     ]
   },
@@ -313,11 +314,11 @@
     "roster": [
       {
         "name": "Xander Schauffele",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Sam Burns",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Harris English",
@@ -329,11 +330,11 @@
       },
       {
         "name": "Maverick McNealy",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Cam Davis",
-        "starter": false,
+        "starter": true,
         "dg_name": "Cameron Davis"
       },
       {
@@ -342,19 +343,19 @@
       },
       {
         "name": "Keegan Bradley",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Taylor Pendrith",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Kramer Hickok",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Hayden Buckley",
-        "starter": false
+        "starter": true
       },
       {
         "name": "C.T. Pan",
@@ -375,15 +376,15 @@
     "roster": [
       {
         "name": "Bryson DeChambeau",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Daniel Berger",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Patrick Reed",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Paul Casey",
@@ -399,7 +400,7 @@
       },
       {
         "name": "Erik van Rooyen",
-        "starter": false,
+        "starter": true,
         "dg_name": "Erik Van Rooyen"
       },
       {
@@ -412,20 +413,20 @@
       },
       {
         "name": "Branden Grace",
-        "starter": false
+        "starter": true
       },
       {
         "name": "K.H. Lee",
-        "starter": false,
+        "starter": true,
         "dg_name": "Kyoung-Hoon Lee"
       },
       {
         "name": "John Huh",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Russell Knox",
-        "starter": false
+        "starter": true
       }
     ]
   },
@@ -442,7 +443,7 @@
       },
       {
         "name": "Tony Finau",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Mackenzie Hughes",
@@ -466,15 +467,15 @@
       },
       {
         "name": "Lucas Herbert",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Harry Higgs",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Charles Howell III",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Min Woo Lee",
@@ -482,11 +483,11 @@
       },
       {
         "name": "Sahith Theegala",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Rory Sabbatini",
-        "starter": false
+        "starter": true
       }
     ]
   },
@@ -523,7 +524,7 @@
       },
       {
         "name": "Brendon Todd",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Lanto Griffin",
@@ -531,7 +532,7 @@
       },
       {
         "name": "Brendan Steele",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Martin Laird",
@@ -539,7 +540,7 @@
       },
       {
         "name": "Lucas Glover",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Chez Reavie",
@@ -547,7 +548,7 @@
       },
       {
         "name": "Takumi Kanaya",
-        "starter": false
+        "starter": true
       }
     ]
   },
@@ -560,11 +561,11 @@
     "roster": [
       {
         "name": "Brooks Koepka",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Jordan Spieth",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Talor Gooch",
@@ -580,7 +581,7 @@
       },
       {
         "name": "Seamus Power",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Dylan Frittelli",
@@ -588,11 +589,11 @@
       },
       {
         "name": "Greyson Sigg",
-        "starter": false
+        "starter": true
       },
       {
         "name": "David Skinns",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Danny Lee",
@@ -600,15 +601,15 @@
       },
       {
         "name": "Nick Hardy",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Henrik Norlander",
-        "starter": false
+        "starter": true
       },
       {
         "name": "Nate Lashley",
-        "starter": false
+        "starter": true
       }
     ]
   }
