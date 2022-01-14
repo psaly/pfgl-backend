@@ -166,10 +166,7 @@ async def kwp_scores(req: Request):
     if not slack_utils.valid_request(form, slack_utils.SlackChannel.KWP):
         raise HTTPException(status_code=400, detail="Invalid token.")
     
-    print(f'{form["text"]}\n{type(form["text"])}')
-    
     response_in_channel = False if "-h" in form["text"] else True
-    print("inchannel:", response_in_channel)
 
     tourney_details = get_tournament_details()
     tourney_name = tourney_details["tournament_name"]
@@ -213,10 +210,7 @@ async def kwp_leaderboard(req: Request):
     if not slack_utils.valid_request(form, slack_utils.SlackChannel.KWP):
         raise HTTPException(status_code=400, detail="Invalid token.") 
     
-    print(f'{form["text"]}\n{type(form["text"])}')
-    
     response_in_channel = False if "-h" in form["text"] else True
-    print("inchannel:", response_in_channel)
     
     tourney_details = get_tournament_details()
     tourney_name = tourney_details["tournament_name"]
