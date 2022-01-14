@@ -96,8 +96,12 @@ def get_root():
         "message": "Welcome to the PFGL!"
     }
 
+
 @app.get("/api/v1/scoreboard")
 async def scoreboard():
+    """
+    PFGL scoring page backend endpoint.
+    """
     team_lineups = get_team_starting_lineups()
     tourney_details = get_tournament_details()
     tourney_name = tourney_details["tournament_name"]
@@ -153,15 +157,20 @@ async def scoreboard():
     
     return response
 
+
 # Slack endpoints
 @app.post('/api/v1/kwp/scores')
 async def kwp_scores(req: Request):
     form = await req.form()
     
     if not slack_utils.valid_request(form, slack_utils.SlackChannel.KWP):
-        raise HTTPException(status_code=400, detail="Invalid token.") 
+        raise HTTPException(status_code=400, detail="Invalid token.")
     
+    print(f'{form["text"]}\n{type(form["text"])}')
     
+    response_in_channel = False if "-h" in form["text"] else True
+    print("inchannel:", response_in_channel)
+
     tourney_details = get_tournament_details()
     tourney_name = tourney_details["tournament_name"]
     
@@ -193,17 +202,21 @@ async def kwp_scores(req: Request):
     
     team_scoring.sort(key=lambda x:x["team_score"])
 
-    return slack_utils.build_scores_response(team_scoring, tourney_name)
+    return slack_utils.build_scores_response(team_scoring, tourney_name, response_in_channel)
     
     
 # Some duped code in these 2 but too lazy to fix now
 @app.post('/api/v1/kwp/leaderboard')
-async def kwp_scores(req: Request):
+async def kwp_leaderboard(req: Request):
     form = await req.form()
     
     if not slack_utils.valid_request(form, slack_utils.SlackChannel.KWP):
         raise HTTPException(status_code=400, detail="Invalid token.") 
     
+    print(f'{form["text"]}\n{type(form["text"])}')
+    
+    response_in_channel = False if "-h" in form["text"] else True
+    print("inchannel:", response_in_channel)
     
     tourney_details = get_tournament_details()
     tourney_name = tourney_details["tournament_name"]
@@ -236,7 +249,8 @@ async def kwp_scores(req: Request):
     
     team_scoring.sort(key=lambda x:x["team_score"])
 
-    return slack_utils.build_leaderboard_response(team_scoring, tourney_name)
+    return slack_utils.build_leaderboard_response(team_scoring, tourney_name, response_in_channel)
+
 
 # THIS IS REALLY BAD TO HAVE AS A GET BUT IT'S FOR TESTING
 # Use repeated task instead eventually!!!

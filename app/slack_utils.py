@@ -12,7 +12,7 @@ def valid_request(slack_form, channel: SlackChannel):
     return slack_form['token'] == channel.token and slack_form['team_id'] == channel.team_id
     
     
-def build_scores_response(team_scoring: list[dict], tourney_name: str) -> dict:
+def build_scores_response(team_scoring: list[dict], tourney_name: str, in_channel=True) -> dict:
     """
     Return data for Slack to display
     """
@@ -66,14 +66,16 @@ def build_scores_response(team_scoring: list[dict], tourney_name: str) -> dict:
             {
                 "type": "divider"
             }
-	    ],
-        "response_type": "in_channel"
+	    ]
     }
+    
+    if in_channel:
+        slack_res["response_type"] = "in_channel"
 
     return slack_res
 
 
-def build_leaderboard_response(team_scoring: list[dict], tourney_name: str) -> dict:
+def build_leaderboard_response(team_scoring: list[dict], tourney_name: str, in_channel=True) -> dict:
     """
     Return data for Slack to display
     """
@@ -107,9 +109,11 @@ def build_leaderboard_response(team_scoring: list[dict], tourney_name: str) -> d
             {
                 "type": "divider"
             }
-	    ],
-        "response_type": "in_channel"
+	    ]
     }
+    
+    if in_channel:
+        slack_res["response_type"] = "in_channel"
 
     return slack_res
 
