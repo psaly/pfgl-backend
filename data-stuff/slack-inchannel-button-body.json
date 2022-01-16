@@ -1,0 +1,109 @@
+{
+    "type": "block_actions",
+    "user": {
+        "id": "URU7625R9",
+        "username": "psaly6",
+        "name": "psaly6",
+        "team_id": "TRSTAS2GJ"
+    },
+    "api_app_id": "ASTBS8B9T",
+    "token": "b9dpA3duAR2GWr9mHOClpgQL",
+    "container": {
+        "type": "message",
+        "message_ts": "1642376063.009100",
+        "channel_id": "DRU7628SX",
+        "is_ephemeral": False
+    },
+    "trigger_id": "2960490027074.876928886562.41a5a62dc7de18396a2fa0ab5b9da665",
+    "team": {
+        "id": "TRSTAS2GJ",
+        "domain": "fantasygolfpool"
+    },
+    "enterprise": None,
+    "is_enterprise_install": False,
+    "channel": {
+        "id": "DRU7628SX",
+        "name": "directmessage"
+    },
+    "message": {
+        "type": "message",
+        "subtype": "bot_message",
+        "text": "This content can't be displayed.",
+        "ts": "1642376063.009100",
+        "bot_id": "BSVJZ8CR4",
+        "blocks": [
+            {
+                "type": "header",
+                "block_id": "LPEXw",
+                "text": {
+                    "type": "plain_text",
+                    "text": "Sony Open in Hawaii",
+                    "emoji": True
+                }
+            },
+            {
+                "type": "divider",
+                "block_id": "wGT"
+            },
+            {
+                "type": "section",
+                "block_id": "HQAxb",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "*O'Leary*: `-54`\n*Saly*: `-53`\n*Corby*: `-52`\n*Harv*: `-52`\n_Bonus: Off_",
+                    "verbatim": False
+                }
+            },
+            {
+                "type": "actions",
+                "block_id": "6mpa",
+                "elements": [
+                    {
+                        "type": "button",
+                        "action_id": "wWK3y",
+                        "text": {
+                            "type": "plain_text",
+                            "text": "Show Bonus",
+                            "emoji": True
+                        },
+                        "style": "primary",
+                        "value": "show"
+                    },
+                    {
+                        "type": "button",
+                        "action_id": "tB6",
+                        "text": {
+                            "type": "plain_text",
+                            "text": "Hide Bonus",
+                            "emoji": True
+                        },
+                        "value": "hide"
+                    }
+                ]
+            },
+            {
+                "type": "divider",
+                "block_id": "LZOz"
+            }
+        ]
+    },
+    "state": {
+        "values": {}
+    },
+    "response_url": "https://hooks.slack.com/actions/TRSTAS2GJ/2973130949985/oOlmM7k2FBvOOqi0MK38g5w5",
+    "actions": [
+        {
+            "action_id": "wWK3y",
+            "block_id": "6mpa",
+            "text": {
+                "type": "plain_text",
+                "text": "Show Bonus",
+                "emoji": True
+            },
+            "value": "show",
+            "style": "primary",
+            "type": "button",
+            "action_ts": "1642376065.252830"
+        }
+    ]
+}

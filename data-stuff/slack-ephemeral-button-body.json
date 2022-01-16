@@ -1,0 +1,46 @@
+{
+    "type": "block_actions",
+    "user": {
+        "id": "URU7625R9",
+        "username": "psaly6",
+        "name": "psaly6",
+        "team_id": "TRSTAS2GJ"
+    },
+    "api_app_id": "ASTBS8B9T",
+    "token": "b9dpA3duAR2GWr9mHOClpgQL",
+    "container": {
+        "type": "message",
+        "message_ts": "1642375867.008800",
+        "channel_id": "DRU7628SX",
+        "is_ephemeral": True
+    },
+    "trigger_id": "2957569998997.876928886562.3ab02c68395b4c004c47ef2044953bd8",
+    "team": {
+        "id": "TRSTAS2GJ",
+        "domain": "fantasygolfpool"
+    },
+    "enterprise": None,
+    "is_enterprise_install": False,
+    "channel": {
+        "id": "DRU7628SX",
+        "name": "directmessage"
+    },
+    "state": {
+        "values": {}
+    },
+    "response_url": "https://hooks.slack.com/actions/TRSTAS2GJ/2962787799604/wcT2Avxs6oFisUg9iHiOXK8H",
+    "actions": [
+        {
+            "action_id": "4kU",
+            "block_id": "J5IC",
+            "text": {
+                "type": "plain_text",
+                "text": "Hide Bonus",
+                "emoji": True
+            },
+            "value": "hide",
+            "type": "button",
+            "action_ts": "1642375869.579239"
+        }
+    ]
+}

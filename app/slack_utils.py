@@ -12,28 +12,28 @@ def valid_request(slack_form, channel: SlackChannel):
     return slack_form['token'] == channel.token and slack_form['team_id'] == channel.team_id
     
     
-def build_scores_response(team_scoring: list[dict], tourney_name: str, in_channel=True) -> dict:
-    """
-    Return data for Slack to display
-    """
+def build_slack_response(
+    team_scoring: list[dict], 
+    tourney_name: str, 
+    in_channel=True, 
+    show_player_scores=True,
+    bonus=False) -> dict:
     scores_string = ''
     breakdown_string = ''
     
-    for i, score_data in enumerate(team_scoring):
-        scores_string += '*' + score_data["manager_name"] + '*: `' + _display_score_to_par(score_data["team_score"]) + '`'
-        if i < len(team_scoring) - 1:
-            scores_string += '\n'
-            
+    for score_data in team_scoring:
+        scores_string += '*' + score_data["manager_name"] + '*: `' + _display_score_to_par(score_data["team_score"]) + '`\n'
         breakdown_string += '*' + score_data["manager_name"] + '*\n'
         
-        for player_data in score_data["player_scores"]:
-            breakdown_string += player_data["player_name"] + ': `' \
+        for i, player_data in enumerate(score_data["player_scores"]):
+            breakdown_string += ">" + player_data["player_name"] + ': `' \
                 + _display_score_to_par(player_data["kwp_score_to_par"]) \
                 + '` thru ' + player_data['thru'] + '\n'
-        
+                
         breakdown_string += '\n'
 
-
+    scores_string += '_Bonus: Off_'
+    
     slack_res = {
         "blocks": [   
             {
@@ -55,7 +55,60 @@ def build_scores_response(team_scoring: list[dict], tourney_name: str, in_channe
 		    },
             {
                 "type": "divider"
-            },
+            }
+	    ]
+    }
+    
+    # WITH BUTTONS!
+    # slack_res = {
+    #     "blocks": [   
+    #         {
+    #             "type": "header",
+    #             "text": {
+    #                 "type": "plain_text",
+    #                 "text": tourney_name
+    #             }
+	# 	    },
+    #         {
+    #             "type": "divider"
+    #         },
+	# 	    {
+    #             "type": "section",
+    #             "text": {
+    #                 "type": "mrkdwn",
+    #                 "text": scores_string
+    #             }
+	# 	    },
+    #         {
+    #             "type": "actions",
+    #             "elements": [
+    #                 {
+    #                     "type": "button",
+    #                     "text": {
+    #                         "type": "plain_text",
+    #                         "text": "Show Bonus"
+    #                     },
+    #                     "style": "primary",
+    #                     "value": "show"
+    #                 },
+    #                 {
+    #                     "type": "button",
+    #                     "text": {
+    #                         "type": "plain_text",
+    #                         "text": "Hide Bonus"
+    #                     },
+    #                     "value": "hide"
+    #                 }
+    #             ]
+	# 	    },
+    #         {
+    #             "type": "divider"
+    #         },
+	#     ]
+    # }
+    
+    if show_player_scores:
+        slack_res["blocks"].extend([
             {
                 "type": "section",
                 "text": {
@@ -66,57 +119,12 @@ def build_scores_response(team_scoring: list[dict], tourney_name: str, in_channe
             {
                 "type": "divider"
             }
-	    ]
-    }
+        ])
     
     if in_channel:
         slack_res["response_type"] = "in_channel"
-
+        
     return slack_res
-
-
-def build_leaderboard_response(team_scoring: list[dict], tourney_name: str, in_channel=True) -> dict:
-    """
-    Return data for Slack to display
-    """
-    scores_string = ''
-    
-    for i, score_data in enumerate(team_scoring):
-        scores_string += '*' + score_data["manager_name"] + '*: `' + _display_score_to_par(score_data["team_score"]) + '`'
-        if i < len(team_scoring) - 1:
-            scores_string += '\n'
-
-
-    slack_res = {
-        "blocks": [   
-            {
-                "type": "header",
-                "text": {
-                    "type": "plain_text",
-                    "text": tourney_name
-                }
-		    },
-            {
-                "type": "divider"
-            },
-		    {
-                "type": "section",
-                "text": {
-                    "type": "mrkdwn",
-                    "text": scores_string
-                }
-		    },
-            {
-                "type": "divider"
-            }
-	    ]
-    }
-    
-    if in_channel:
-        slack_res["response_type"] = "in_channel"
-
-    return slack_res
-
 
 
 def _display_score_to_par(score: int) -> str:

@@ -1,10 +1,14 @@
 __author__ = 'piercesaly'
 
 import requests
+from requests.structures import CaseInsensitiveDict
 from bs4 import BeautifulSoup
+from decouple import config
 
 PFGL_CUT_PENALTY = 5
 KWP_CUT_PENALTY = 2
+
+WEBFLOW_BASE_URL = "https://api.webflow.com/"
 
 def get_field_json() -> list[dict]:
     """
@@ -94,6 +98,50 @@ def scrape_live_leaderboard(url="https://www.espn.com/golf/leaderboard") -> list
             player["kwp_score_to_par"] = worst_score + KWP_CUT_PENALTY
     
     return all_players
+
+def send_slack_bonus_request(url: str, content: dict) -> int:
+    headers = CaseInsensitiveDict()
+    headers["Content-Type"] = "application/json"
+
+    data = {
+        "replace_original": "true",
+        "blocks": content
+    }
+
+    
+    
+    resp = requests.post(url, headers, data)
+    return (resp.status_code)
+
+
+def update_webflow_team(roster_data):
+    webflow_collection_id = config("WEBFLOW_TEAM_COLLECTION_ID")
+    webflow_auth_token = config("WEBFLOW_AUTH_TOKEN")
+    
+    url = "https://reqbin.com/echo/patch/json"
+    
+    
+
+    # headers = {}
+
+    # headers["Accept"] = "application/json"
+    # headers["Content-Type"] = "application/json"
+    # headers["Authorization"] = f"Bearer {webflow_auth_token}"
+    # headers["accept-version"] = "1.0.0"
+
+    # data = """
+    # {
+    # "Id": 12345,
+    # "Customer": "John Smith",
+    # "Quantity": 1,
+    # "Price": 10.00
+    # }
+    # """
+
+
+    # resp = requests.patch(url, headers=headers, data=data)
+
+    # print(resp.status_code)
             
     
 
