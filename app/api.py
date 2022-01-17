@@ -1,4 +1,3 @@
-from os import stat
 import json
 
 from fastapi import FastAPI, Request, HTTPException
@@ -7,7 +6,7 @@ from fastapi.staticfiles import StaticFiles
 
 from decouple import config, Csv
 
-from app.database import get_all_teams, get_tournament_details, get_team_starting_lineups, update_active_event
+from app.database import get_tournament_details, get_team_starting_lineups, update_active_event
 from app.database import get_player_score_by_name, insert_player_scores, update_field_this_week, get_matchups
 from app.web_utils import scrape_live_leaderboard, get_field_json, send_slack_bonus_request
 import app.slack_utils as slack_utils
@@ -170,18 +169,19 @@ async def kwp_scores(req: Request):
         raise HTTPException(status_code=400, detail="Invalid token.") 
     
     response_in_channel = False if "-h" in form["text"] else True
+    bonus = True if "-b" in form["text"] else False
     
     tourney_details = get_tournament_details()
     tourney_name = tourney_details["tournament_name"]
     
-    team_scores = _get_kwp_scores(tourney_name)
+    team_scores = _get_kwp_scores(tourney_name, bonus)
 
     return slack_utils.build_slack_response(
         team_scores, 
         tourney_name, 
         in_channel=response_in_channel,
         show_player_scores=True,
-        bonus=False
+        bonus=bonus
     )
     
     
@@ -193,18 +193,19 @@ async def kwp_leaderboard(req: Request):
         raise HTTPException(status_code=400, detail="Invalid token.") 
     
     response_in_channel = False if "-h" in form["text"] else True
+    bonus = True if "-b" in form["text"] else False
     
     tourney_details = get_tournament_details()
     tourney_name = tourney_details["tournament_name"]
     
-    team_scores = _get_kwp_scores(tourney_name)
+    team_scores = _get_kwp_scores(tourney_name, bonus)
 
     return slack_utils.build_slack_response(
         team_scores, 
         tourney_name, 
         in_channel=response_in_channel,
         show_player_scores=False,
-        bonus=False
+        bonus=bonus
     )
 
 
@@ -235,7 +236,10 @@ def get_live_scores():
     """
     For testing scraping code. DOES NOT ADD TO DATABASE!!!!!
     """
-    player_scores = scrape_live_leaderboard(url=old_tournament_url)
+    if display_old_tournament_leaderboard:
+        player_scores = scrape_live_leaderboard(url=old_tournament_url)
+    else:
+        player_scores = scrape_live_leaderboard()
     
     return player_scores
 
@@ -246,7 +250,7 @@ def get_live_scores():
     # rosters = get_all_teams()
     
 
-def _get_kwp_scores(tournament_name: str) -> list[dict]:
+def _get_kwp_scores(tournament_name: str, bonus: bool) -> list[dict]:
     team_lineups = get_team_starting_lineups(kwp=True)
     
     team_scoring = []
@@ -257,13 +261,16 @@ def _get_kwp_scores(tournament_name: str) -> list[dict]:
             score = get_player_score_by_name(player["name"], tournament_name)
             if score:
                 del score["tournament_name"]
+                if bonus:
+                    score["kwp_score_to_par"] -= score["kwp_bonus"]
+                
                 player_scores.append(score)
             # This player could not be found on the leaderboard
             else:
                 player_scores.append({
                     "player_name": player["name"],
                     "position": '???',
-                    "score_to_par": 0,
+                    "kwp_score_to_par": 0,
                     "thru": '???'
                 })
         player_scores.sort(key=lambda x:x["kwp_score_to_par"])

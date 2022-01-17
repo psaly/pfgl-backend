@@ -13,26 +13,31 @@ def valid_request(slack_form, channel: SlackChannel):
     
     
 def build_slack_response(
-    team_scoring: list[dict], 
-    tourney_name: str, 
-    in_channel=True, 
-    show_player_scores=True,
-    bonus=False) -> dict:
+        team_scoring: list[dict], 
+        tourney_name: str, 
+        in_channel=True, 
+        show_player_scores=True,
+        bonus=False
+) -> dict:
     scores_string = ''
     breakdown_string = ''
     
     for score_data in team_scoring:
-        scores_string += '*' + score_data["manager_name"] + '*: `' + _display_score_to_par(score_data["team_score"]) + '`\n'
+        scores_string += '*' + score_data["manager_name"] + '*: `' \
+            + _display_score_to_par(score_data["team_score"]) + '`\n'
         breakdown_string += '*' + score_data["manager_name"] + '*\n'
         
-        for i, player_data in enumerate(score_data["player_scores"]):
+        for player_data in score_data["player_scores"]:
             breakdown_string += ">" + player_data["player_name"] + ': `' \
                 + _display_score_to_par(player_data["kwp_score_to_par"]) \
                 + '` thru ' + player_data['thru'] + '\n'
                 
         breakdown_string += '\n'
 
-    scores_string += '_Bonus: Off_'
+    if bonus:
+        scores_string += '_Bonus: ON_'
+    else:
+        scores_string += '_Bonus: OFF_'
     
     slack_res = {
         "blocks": [   

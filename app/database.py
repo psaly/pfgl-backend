@@ -86,7 +86,6 @@ def get_team_starting_lineups(kwp=False) -> list:
                 }
             }]    
         )
-    
 
 
 

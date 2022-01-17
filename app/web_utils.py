@@ -8,6 +8,10 @@ from decouple import config
 PFGL_CUT_PENALTY = 5
 KWP_CUT_PENALTY = 2
 
+# Bonuses for 1-2-3-4-5 place finishes
+KWP_BONUSES = [10,5,3,2,1]
+PFGL_WIN_BONUS = 5
+
 WEBFLOW_BASE_URL = "https://api.webflow.com/"
 
 def get_field_json() -> list[dict]:
@@ -55,6 +59,8 @@ def scrape_live_leaderboard(url="https://www.espn.com/golf/leaderboard") -> list
                     thru = 'F' if final else tds[i+3].text
                     today = tds[i+5].text if final else tds[i+2].text
                     player = child.text
+                    kwp_bonus = 0
+                    pfgl_bonus = 0
                     
                     score_text = tds[i+1].text
                     
@@ -69,10 +75,20 @@ def scrape_live_leaderboard(url="https://www.espn.com/golf/leaderboard") -> list
                         except ValueError:
                             pos = score_text
 
-                    # get position if we haven't already
+                    # get position if we haven't already and store bonuses
                     if pos is None:
                         pos = tds[i-pos_offset].text
-
+                    try:
+                        pos_int = int(pos.lstrip("T"))
+                        if pos_int == 1:
+                            pfgl_bonus = PFGL_WIN_BONUS
+                        if pos_int < 6:
+                            kwp_bonus = KWP_BONUSES[pos_int - 1]
+                            
+                    except ValueError:
+                        pass
+                    
+                    
                     # add to players list
                     # score could be None still if we need to fill in with worst score
                     # Maybe create an object here?
@@ -81,7 +97,9 @@ def scrape_live_leaderboard(url="https://www.espn.com/golf/leaderboard") -> list
                                         "player_name": player, 
                                         "position": pos, 
                                         "score_to_par": score, 
+                                        "pfgl_bonus": pfgl_bonus,
                                         "kwp_score_to_par": score,
+                                        "kwp_bonus": kwp_bonus,
                                         "today": today,
                                         "thru": thru
                                         })                                  
@@ -98,6 +116,7 @@ def scrape_live_leaderboard(url="https://www.espn.com/golf/leaderboard") -> list
             player["kwp_score_to_par"] = worst_score + KWP_CUT_PENALTY
     
     return all_players
+
 
 def send_slack_bonus_request(url: str, content: dict) -> int:
     headers = CaseInsensitiveDict()
