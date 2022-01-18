@@ -15,6 +15,37 @@ spec:
       containers:
       - image: piercesaly/pfgl:latest # pullPolicy Always when use latest tag
         name: pfgl
+        env:
+        - name: DB_HOST
+          value: "mongodb://mongodb:27017"
+        - name: UVICORN_RELOAD
+          value: "False"
+        - name: ALLOWED_HOSTS
+          value: "https://pfgl.webflow.io, http://pfgl.webflow.io"
+        - name: COUNTING_SCORES
+          value: "4"
+        - name: UPDATE_PLAYER_SCORES_DB
+          value: "False"
+        - name: LEADERBOARD_SCRAPE_INTERVAL
+          value: "1000"
+        - name: UPDATE_FIELD
+          value: "True"
+        - name: FIELD_UPDATE_INTERVAL
+          value: "60"
+        - name: DISPLAY_OLD_TOURNAMENT_LEADERBOARD
+          value: "True"
+        - name: OLD_TOURNAMENT_URL
+          value: "https://www.espn.com/golf/leaderboard/_/tournamentId/401353204"
+        - name: OLD_TOURNAMENT_NAME
+          value: "Sony Open in Hawaii"
+        - name: SEGMENT
+          value: "1"
+        - name: WEEK
+          value: "1"
+        - name: WEBFLOW_TEAM_COLLECTION_ID
+          value: "619c368b7c5d456d6f173d98"
+        - name: WEBFLOW_AUTH_TOKEN
+          value: "cbb0f0444d29e4a70267af4a5c178eff5372ee8633cc79cedb32c5008229ae98"
 
 ---
 
