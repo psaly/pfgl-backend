@@ -31,7 +31,8 @@ def get_all_teams():
     """
     Return list of team objects or None if something goes terribly wrong
     """
-    return teams_collection.find({}, {"_id": 0})
+    return list(teams_collection.find({}, {"_id": 0}))
+
 
 def get_team_by_manager(manager_name: str):
     """

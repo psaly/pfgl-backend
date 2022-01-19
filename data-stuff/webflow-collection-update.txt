@@ -1,0 +1,21 @@
+curl -X PATCH https://api.webflow.com/collections/619c368b7c5d456d6f173d98/items/619c3b8785a3c92678d3c68d?live=true \
+  -H "Authorization: Bearer cbb0f0444d29e4a70267af4a5c178eff5372ee8633cc79cedb32c5008229ae98" \
+  -H 'accept-version: 1.0.0' \
+  -H "Content-Type: application/json" \
+  --data-binary $'{
+      "fields": {
+        "player-13-2": "P. Saly",
+      }
+    }'
+
+
+
+curl -X PATCH https://api.webflow.com/collections/619c368b7c5d456d6f173d98/items/619c381c44af52339c9cccd2?live=true \
+  -H "Authorization: Bearer cbb0f0444d29e4a70267af4a5c178eff5372ee8633cc79cedb32c5008229ae98" \
+  -H 'accept-version: 1.0.0' \
+  -H "Content-Type: application/json" \
+  -d '{
+      "fields": {
+        "player-13-2": "P. Saly"
+      }
+    }'

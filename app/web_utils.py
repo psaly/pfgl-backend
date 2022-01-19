@@ -1,5 +1,7 @@
 __author__ = 'piercesaly'
 
+from http.client import HTTPException
+import json
 import requests
 from requests.structures import CaseInsensitiveDict
 from bs4 import BeautifulSoup
@@ -11,6 +13,8 @@ KWP_CUT_PENALTY = 2
 # Bonuses for 1-2-3-4-5 place finishes
 KWP_BONUSES = [10,5,3,2,1]
 PFGL_WIN_BONUS = 5
+
+LAST_NAME_DISPLAY_CHARS = 9
 
 WEBFLOW_BASE_URL = "https://api.webflow.com/"
 
@@ -133,34 +137,40 @@ def send_slack_bonus_request(url: str, content: dict) -> int:
     return (resp.status_code)
 
 
-def update_webflow_team(roster_data):
+def update_webflow_team(roster_data: dict) -> None:
     webflow_collection_id = config("WEBFLOW_TEAM_COLLECTION_ID")
     webflow_auth_token = config("WEBFLOW_AUTH_TOKEN")
     
-    url = "https://reqbin.com/echo/patch/json"
+    url = f"https://api.webflow.com/collections/{webflow_collection_id}/items/{roster_data['webflow_id']}?live=true"
+
+    headers = {}
+    headers["Accept"] = "application/json"
+    headers["Content-Type"] = "application/json"
+    headers["Authorization"] = f"Bearer {webflow_auth_token}"
+    headers["accept-version"] = "1.0.0"
+
+    request_data = {"fields": {}}
     
+    player_num = 1
+    for player in roster_data["roster"]:
+        l_name = player['name'].strip().split(' ')[-1]
+        
+        if len(l_name) > LAST_NAME_DISPLAY_CHARS:
+            l_name = f"{l_name[:LAST_NAME_DISPLAY_CHARS - 1]}."
+        
+        player_abbrev = f"{player['name'][0]}. {l_name}"
+        
+        if player_num < 10:
+            request_data["fields"][f"player-0{player_num}"] = player_abbrev
+        else:
+            request_data["fields"][f"player-{player_num}-2"] = player_abbrev
+        player_num += 1
     
+    resp = requests.patch(url, headers=headers, json=request_data)
+    print(resp.text)
 
-    # headers = {}
-
-    # headers["Accept"] = "application/json"
-    # headers["Content-Type"] = "application/json"
-    # headers["Authorization"] = f"Bearer {webflow_auth_token}"
-    # headers["accept-version"] = "1.0.0"
-
-    # data = """
-    # {
-    # "Id": 12345,
-    # "Customer": "John Smith",
-    # "Quantity": 1,
-    # "Price": 10.00
-    # }
-    # """
-
-
-    # resp = requests.patch(url, headers=headers, data=data)
-
-    # print(resp.status_code)
-            
-    
-
+    try:
+        resp.raise_for_status()
+        print(f'Updated {roster_data["manager_name"]}\'s roster.')
+    except requests.exceptions.HTTPError as e:
+        print(f'{roster_data["manager_name"]}: {e}')

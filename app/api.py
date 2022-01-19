@@ -6,9 +6,9 @@ from fastapi.staticfiles import StaticFiles
 
 from decouple import config, Csv
 
-from app.database import get_tournament_details, get_team_starting_lineups, update_active_event
+from app.database import get_all_teams, get_tournament_details, get_team_starting_lineups, update_active_event
 from app.database import get_player_score_by_name, insert_player_scores, update_field_this_week, get_matchups
-from app.web_utils import scrape_live_leaderboard, get_field_json, send_slack_bonus_request
+from app.web_utils import scrape_live_leaderboard, get_field_json, send_slack_bonus_request, update_webflow_team
 import app.slack_utils as slack_utils
 
 from fastapi_utils.tasks import repeat_every
@@ -88,7 +88,16 @@ def field_updater() -> None:
     if display_old_tournament_leaderboard:
         update_active_event(old_tournament_name)
     
-
+    
+@app.on_event("startup")
+def publish_rosters():
+    """
+    Update webflow rosters collection.
+    """
+    if config("PUBLISH_ROSTERS", cast=bool):
+        print("PUBLISHING ROSTERS:")
+        for team in get_all_teams():
+            update_webflow_team(team)
 
 
 # ROUTES
@@ -242,12 +251,6 @@ def get_live_scores():
         player_scores = scrape_live_leaderboard()
     
     return player_scores
-
-
-# # Use repeated task instead eventually!!!
-# @app.get("/api/v1/publish_roster_test/{manager_name}")
-# def get_live_scores(manager_name: str):
-    # rosters = get_all_teams()
     
 
 def _get_kwp_scores(tournament_name: str, bonus: bool) -> list[dict]:
@@ -281,7 +284,5 @@ def _get_kwp_scores(tournament_name: str, bonus: bool) -> list[dict]:
         team_scoring.append({"manager_name": team['manager_name'], "team_score": team_score, "player_scores": player_scores})
     
     team_scoring.sort(key=lambda x:x["team_score"])
-    
-    print(team_scoring)
     
     return team_scoring

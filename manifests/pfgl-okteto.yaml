@@ -46,6 +46,8 @@ spec:
           value: "619c368b7c5d456d6f173d98"
         - name: WEBFLOW_AUTH_TOKEN
           value: "cbb0f0444d29e4a70267af4a5c178eff5372ee8633cc79cedb32c5008229ae98"
+        - name: PUBLISH_ROSTERS
+          value: "False"
 
 ---
 

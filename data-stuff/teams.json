@@ -4,7 +4,7 @@
     "manager_name": "Lucas",
     "team_name": "Rahmrod Noodle",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1f9d24da7eca8ca392_lucas.jpg",
-    "record": "1-0-0",
+    "record": "2-0-0",
     "webflow_id": "619c3b7afccf705d6a79a698619c3b6ba96ceb2ceac4bbf1",
     "roster": [
       {
@@ -66,7 +66,7 @@
     "manager_name": "James",
     "team_name": "Drops of Jupiter",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1d6669d5ea1c2ca8a5_james.jpg",
-    "record": "1-0-0",
+    "record": "2-0-0",
     "webflow_id": "619c3b47911ac3e05b048c73",
     "roster": [
       {
@@ -128,7 +128,7 @@
     "manager_name": "Jordan",
     "team_name": "Honest Abraham & the Sicarios",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1fbeac884e2aa73f0b_jordan.jpg",
-    "record": "1-0-0",
+    "record": "1-1-0",
     "webflow_id": "619c3b5585a3c98aa2d3c680",
     "roster": [
       {
@@ -181,7 +181,7 @@
         "dg_name": "Vincent Whaley"
       },
       {
-        "name": "Mark Hubbard",
+        "name": "Michael Thompson",
         "starter": false
       }
     ]
@@ -191,7 +191,7 @@
     "manager_name": "Alex",
     "team_name": "5AM in Dundas",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1eda1792c20b2b90cc_alex.jpg",
-    "record": "1-0-0",
+    "record": "1-1-0",
     "webflow_id": "619c3b13c1ee4023accbebc8",
     "roster": [
       {
@@ -239,7 +239,7 @@
         "starter": true
       },
       {
-        "name": "Robert Streb",
+        "name": "Troy Merritt",
         "starter": true
       },
       {
@@ -253,7 +253,7 @@
     "manager_name": "Calum",
     "team_name": "Saw Dudes",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1df683d235a41b6953_calum.jpg",
-    "record": "1-0-0",
+    "record": "2-0-0",
     "webflow_id": "619c3b3744af52c0089cd1a6",
     "roster": [
       {
@@ -305,7 +305,7 @@
         "starter": true
       },
       {
-        "name": "Cameron Young",
+        "name": "Doug Ghim",
         "starter": true
       }
     ]
@@ -315,7 +315,7 @@
     "manager_name": "Will",
     "team_name": "Pineapple Daiquiri",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1f7084bb360617fa43_will.jpg",
-    "record": "0-1-0",
+    "record": "0-2-0",
     "webflow_id": "619c3b9079c3f3a7286b1d95",
     "roster": [
       {
@@ -378,7 +378,7 @@
     "manager_name": "Pierce",
     "team_name": "Freed Piss Bear",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1f2e8e2e459437236e_pierce.jpg",
-    "record": "0-1-0",
+    "record": "0-2-0",
     "webflow_id": "619c3b8785a3c92678d3c68d",
     "roster": [
       {
@@ -428,7 +428,7 @@
         "dg_name": "Kyoung-Hoon Lee"
       },
       {
-        "name": "John Huh",
+        "name": "Patrick Rodgers",
         "starter": true
       },
       {
@@ -442,7 +442,7 @@
     "manager_name": "Keith",
     "team_name": "Sabbatini's Soldiers",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1e2880484d627dba6d_keith.jpg",
-    "record": "0-1-0",
+    "record": "0-2-0",
     "webflow_id": "619c3b6ba96ceb2ceac4bbf1",
     "roster": [
       {
@@ -504,7 +504,7 @@
     "manager_name": "Al",
     "team_name": "Snow Patrol",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1fb85a4be6c20eb9c4_al.jpg",
-    "record": "0-1-0",
+    "record": "1-1-0",
     "webflow_id": "619c381c44af52339c9cccd2",
     "roster": [
       {
@@ -566,7 +566,7 @@
     "manager_name": "Braden",
     "team_name": "Brinks Koepka",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1fe73de480d40b491f_braden.jpg",
-    "record": "0-1-0",
+    "record": "1-1-0",
     "webflow_id": "619c3b2d0ade2299ef2ab326",
     "roster": [
       {
