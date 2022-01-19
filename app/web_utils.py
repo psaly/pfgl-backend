@@ -167,7 +167,6 @@ def update_webflow_team(roster_data: dict) -> None:
         player_num += 1
     
     resp = requests.patch(url, headers=headers, json=request_data)
-    print(resp.text)
 
     try:
         resp.raise_for_status()

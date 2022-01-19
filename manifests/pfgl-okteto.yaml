@@ -33,7 +33,7 @@ spec:
         - name: FIELD_UPDATE_INTERVAL
           value: "60"
         - name: DISPLAY_OLD_TOURNAMENT_LEADERBOARD
-          value: "True"
+          value: "False"
         - name: OLD_TOURNAMENT_URL
           value: "https://www.espn.com/golf/leaderboard/_/tournamentId/401353204"
         - name: OLD_TOURNAMENT_NAME
@@ -41,7 +41,7 @@ spec:
         - name: SEGMENT
           value: "1"
         - name: WEEK
-          value: "1"
+          value: "2"
         - name: WEBFLOW_TEAM_COLLECTION_ID
           value: "619c368b7c5d456d6f173d98"
         - name: WEBFLOW_AUTH_TOKEN
