@@ -25,13 +25,13 @@ spec:
         - name: COUNTING_SCORES
           value: "4"
         - name: UPDATE_PLAYER_SCORES_DB
-          value: "False"
-        - name: LEADERBOARD_SCRAPE_INTERVAL
-          value: "1000"
-        - name: UPDATE_FIELD
           value: "True"
+        - name: LEADERBOARD_SCRAPE_INTERVAL
+          value: "100000"
+        - name: UPDATE_FIELD
+          value: "False"
         - name: FIELD_UPDATE_INTERVAL
-          value: "60"
+          value: "480"
         - name: DISPLAY_OLD_TOURNAMENT_LEADERBOARD
           value: "False"
         - name: OLD_TOURNAMENT_URL
@@ -47,7 +47,7 @@ spec:
         - name: WEBFLOW_AUTH_TOKEN
           value: "cbb0f0444d29e4a70267af4a5c178eff5372ee8633cc79cedb32c5008229ae98"
         - name: PUBLISH_ROSTERS
-          value: "False"
+          value: "True"
 
 ---
 

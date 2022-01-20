@@ -3,7 +3,7 @@ import json
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-
+from fastapi_utils.tasks import repeat_every
 from decouple import config, Csv
 
 from app.database import get_all_teams, get_tournament_details, get_team_starting_lineups, update_active_event
@@ -11,10 +11,9 @@ from app.database import get_player_score_by_name, insert_player_scores, update_
 from app.web_utils import scrape_live_leaderboard, get_field_json, send_slack_bonus_request, update_webflow_team
 import app.slack_utils as slack_utils
 
-from fastapi_utils.tasks import repeat_every
 
 # Our app
-app = FastAPI()# deployment
+app = FastAPI()
 
 origins = config('ALLOWED_HOSTS', cast=Csv())
 
