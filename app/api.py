@@ -11,6 +11,8 @@ from app.database import get_player_score_by_name, insert_player_scores, update_
 from app.web_utils import scrape_live_leaderboard, get_field_json, send_slack_bonus_request, update_webflow_team
 import app.slack_utils as slack_utils
 
+TIE_IMAGE = "https://cdn.vox-cdn.com/thumbor/guM-FItrKThQmkwjcLbrKw8AejA=/46x0:551x337/1400x1400/filters:focal(46x0:551x337):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/52322037/beamer.0.0.jpeg"
+TIE_TEXT = "Tied!"
 
 # Our app
 app = FastAPI()
@@ -150,11 +152,19 @@ async def scoreboard():
     
     for i, matchup in enumerate(get_matchups(current_segment, current_week)):
         # determine who is winning
-        if team_scores[matchup["managers"][0]] <= team_scores[matchup["managers"][1]]:
+        if team_scores[matchup["managers"][0]] < team_scores[matchup["managers"][1]]:
             response["matchup_winning"][f"m{i}"] = {
                 "name": matchup["managers"][0], 
                 "logo_url": team_logo_urls[matchup["managers"][0]]
             }
+            
+        # TIED!
+        elif team_scores[matchup["managers"][0]] == team_scores[matchup["managers"][1]]:
+            response["matchup_winning"][f"m{i}"] = {
+                "name": TIE_TEXT, 
+                "logo_url": TIE_IMAGE
+            }
+        
         else:
             response["matchup_winning"][f"m{i}"] = {
                 "name": matchup["managers"][1], 

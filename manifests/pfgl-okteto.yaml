@@ -27,7 +27,7 @@ spec:
         - name: UPDATE_PLAYER_SCORES_DB
           value: "True"
         - name: LEADERBOARD_SCRAPE_INTERVAL
-          value: "100000"
+          value: "1"
         - name: UPDATE_FIELD
           value: "False"
         - name: FIELD_UPDATE_INTERVAL
@@ -47,7 +47,7 @@ spec:
         - name: WEBFLOW_AUTH_TOKEN
           value: "cbb0f0444d29e4a70267af4a5c178eff5372ee8633cc79cedb32c5008229ae98"
         - name: PUBLISH_ROSTERS
-          value: "True"
+          value: "False"
 
 ---
 
