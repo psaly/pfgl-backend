@@ -25,29 +25,29 @@ spec:
         - name: COUNTING_SCORES
           value: "4"
         - name: UPDATE_PLAYER_SCORES_DB
-          value: "True"
+          value: "False"
         - name: LEADERBOARD_SCRAPE_INTERVAL
           value: "1"
         - name: UPDATE_FIELD
           value: "False"
         - name: FIELD_UPDATE_INTERVAL
-          value: "480"
+          value: "60"
         - name: DISPLAY_OLD_TOURNAMENT_LEADERBOARD
           value: "False"
         - name: OLD_TOURNAMENT_URL
-          value: "https://www.espn.com/golf/leaderboard/_/tournamentId/401353204"
+          value: "https://www.espn.com/golf/leaderboard/_/tournamentId/401353233"
         - name: OLD_TOURNAMENT_NAME
-          value: "Sony Open in Hawaii"
+          value: "The American Express"
         - name: SEGMENT
           value: "1"
         - name: WEEK
-          value: "2"
+          value: "3"
         - name: WEBFLOW_TEAM_COLLECTION_ID
           value: "619c368b7c5d456d6f173d98"
         - name: WEBFLOW_AUTH_TOKEN
           value: "cbb0f0444d29e4a70267af4a5c178eff5372ee8633cc79cedb32c5008229ae98"
         - name: PUBLISH_ROSTERS
-          value: "False"
+          value: "True"
 
 ---
 
