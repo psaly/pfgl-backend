@@ -1,6 +1,5 @@
 from pymongo import MongoClient
 from decouple import config
-from bson.json_util import dumps
 
 mongo_connection_details = config("DB_HOST")
 
@@ -14,17 +13,16 @@ player_scores_collection = database.get_collection('player_scores')
 tournament_collection = database.get_collection('tournaments')
 field_collection = database.get_collection('field')
 matchup_collection = database.get_collection('matchups')
+results_collection = database.get_collection('pfgl_weekly_results')
+team_scores_collection = database.get_collection('team_scores')
 
 def get_matchups(segment: int, week: int) -> list[dict]:
     """
     segment 1-3
     week 0-8
     """
-    matchups = []
-    for matchup in matchup_collection.find({"segment": segment, "week": week}, {"_id": 0}):
-        matchups.append(matchup)
     
-    return matchups
+    return list(matchup_collection.find({"segment": segment, "week": week}, {"_id": 0}))
 
 
 def get_all_teams():
@@ -158,3 +156,37 @@ def update_active_event(tourney_name: str) -> dict:
     return success
     
     
+def compile_weekly_results():
+    tourney_name = get_tournament_name()
+    scoreboard = results_collection.find_one({"tournament_details.tournament_name": tourney_name})
+    matchups_with_ids = get_matchups(config("SEGMENT", cast=int), config("WEEK", cast=int))
+    
+    team_results = []
+        
+    opponents = {}
+    for matchup in matchups_with_ids:
+        opponents[matchup["managers"][0]] = matchup["managers"][1]
+        opponents[matchup["managers"][1]] = matchup["managers"][0]
+        
+    scores = {}
+    for team in scoreboard["teams"]:
+        team_score_with_bonus = team["team_score"] - sum([p["pfgl_bonus"] for p in team["players"]])
+        team_score_without_bonus = team["team_score"]
+        scores[team["manager"]] = [team_score_with_bonus, team_score_without_bonus]
+        
+        team_results.append({
+            "manager": team["manager"], 
+            "segment": config("SEGMENT", cast=int),
+            "week": config("WEEK", cast=int),
+            "score_with_bonus": team_score_with_bonus,
+            "score_without_bonus": team["team_score"],
+            "opponent": opponents[team["manager"]]
+        })
+    
+    for res in team_results:
+        res["opponent_score_with_bonus"] = scores[res["opponent"]][0]
+        res["opponent_score_without_bonus"] = scores[res["opponent"]][1]
+    
+    team_scores_collection.insert_many(team_results)
+    
+    return {"message": "success!"}

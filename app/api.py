@@ -6,7 +6,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi_utils.tasks import repeat_every
 from decouple import config, Csv
 
-from app.database import get_all_teams, get_tournament_details, get_team_starting_lineups, update_active_event
+from app.database import get_all_teams, get_tournament_details, get_team_starting_lineups, update_active_event, compile_weekly_results
 from app.database import get_player_score_by_name, insert_player_scores, update_field_this_week, get_matchups
 from app.web_utils import scrape_live_leaderboard, get_field_json, send_slack_bonus_request, update_webflow_team
 import app.slack_utils as slack_utils
@@ -39,10 +39,6 @@ field_update_interval = config("FIELD_UPDATE_INTERVAL", cast=int)
 display_old_tournament_leaderboard = config("DISPLAY_OLD_TOURNAMENT_LEADERBOARD", cast=bool)
 old_tournament_name = config("OLD_TOURNAMENT_NAME")
 old_tournament_url = config("OLD_TOURNAMENT_URL")
-
-# Current segment number and week number
-current_segment = config("SEGMENT", cast=int)
-current_week = config("WEEK", cast=int)
 
 # tasks to start immediately when app starts up and run every {SCRAPE_INTERVAL} minutes
 @app.on_event("startup")
@@ -150,7 +146,7 @@ async def scoreboard():
 
         response["teams"].append(team)
     
-    for i, matchup in enumerate(get_matchups(current_segment, current_week)):
+    for i, matchup in enumerate(get_matchups(config("SEGMENT", cast=int), config("WEEK", cast=int))):
         # determine who is winning
         if team_scores[matchup["managers"][0]] < team_scores[matchup["managers"][1]]:
             response["matchup_winning"][f"m{i}"] = {
@@ -260,6 +256,14 @@ def get_live_scores():
         player_scores = scrape_live_leaderboard()
     
     return player_scores
+
+
+@app.get("/api/v1/compile_results")
+def compile_results():
+    """
+    Store weekly matchup results in database
+    """
+    return compile_weekly_results()
     
 
 def _get_kwp_scores(tournament_name: str, bonus: bool) -> list[dict]:

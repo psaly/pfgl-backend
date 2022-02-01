@@ -1,0 +1,1 @@
+db.team_scores.find({$expr:{$and:[{$lt: ["$score_with_bonus", "$opponent_score_with_bonus"]}, {$eq: ["$manager", "lucas"]}]}})
