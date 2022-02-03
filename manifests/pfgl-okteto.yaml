@@ -25,15 +25,15 @@ spec:
         - name: COUNTING_SCORES
           value: "4"
         - name: UPDATE_PLAYER_SCORES_DB
-          value: "False"
+          value: "True"
         - name: LEADERBOARD_SCRAPE_INTERVAL
-          value: "1000"
+          value: "1"
         - name: UPDATE_FIELD
           value: "False"
         - name: FIELD_UPDATE_INTERVAL
           value: "60"
         - name: DISPLAY_OLD_TOURNAMENT_LEADERBOARD
-          value: "True"
+          value: "False"
         - name: OLD_TOURNAMENT_URL
           value: "https://www.espn.com/golf/leaderboard/_/tournamentId/401353234"
         - name: OLD_TOURNAMENT_NAME

@@ -190,3 +190,23 @@ def compile_weekly_results():
     team_scores_collection.insert_many(team_results)
     
     return {"message": "success!"}
+
+def get_kwp_field():
+    team_rosters = list(kwp_teams_collection.find({}, {"manager_name": 1, "players": "$roster.name", "_id": 0}))
+    
+    player_field = set([p["name"] for p in list(field_collection.find({"event_name": get_tournament_details()["tournament_name"]}, {"name": "$player_name", "_id": 0}))])
+    
+    field = []
+    
+    for team in team_rosters:
+        manager = team["manager_name"]
+        team_field = {"manager_name": manager, "count": 0, "players": []}
+        for player in team["players"]:
+            if player in player_field:
+                team_field["players"].append({"name": player, "playing": True})
+                team_field["count"] += 1
+            else:
+                team_field["players"].append({"name": player, "playing": False})
+        field.append(team_field)
+    
+    return field

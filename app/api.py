@@ -6,7 +6,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi_utils.tasks import repeat_every
 from decouple import config, Csv
 
-from app.database import get_all_teams, get_tournament_details, get_team_starting_lineups, update_active_event, compile_weekly_results
+from app.database import get_all_teams, get_tournament_details, get_team_starting_lineups, update_active_event, compile_weekly_results, get_kwp_field
 from app.database import get_player_score_by_name, insert_player_scores, update_field_this_week, get_matchups
 from app.web_utils import scrape_live_leaderboard, get_field_json, send_slack_bonus_request, update_webflow_team
 import app.slack_utils as slack_utils
@@ -223,6 +223,21 @@ async def kwp_leaderboard(req: Request):
     )
 
 
+@app.post("/api/v1/kwp/field", status_code=200)
+async def kwp_field(req: Request):
+    form = await req.form()
+    
+    if not slack_utils.valid_request(form, slack_utils.SlackChannel.KWP):
+        raise HTTPException(status_code=400, detail="Invalid token.") 
+    
+    response_in_channel = False if "-h" in form["text"] else True
+    
+    tourney_details = get_tournament_details()
+    tourney_name = tourney_details["tournament_name"]
+    
+    return slack_utils.build_field_response(get_kwp_field(), tourney_name, response_in_channel)
+
+
 @app.post("/api/v1/kwp/bonus", status_code=200)
 async def slack_bonus_endpoint(req: Request):
     form = await req.form()
@@ -242,6 +257,7 @@ async def slack_bonus_endpoint(req: Request):
     print(f"Show/hide POST request status_code: {status_code}")
 
     return {}
+
     
 
 # THIS IS REALLY BAD TO HAVE AS A GET BUT IT'S FOR TESTING
@@ -256,6 +272,8 @@ def get_live_scores():
         player_scores = scrape_live_leaderboard()
     
     return player_scores
+
+
 
 
 @app.get("/api/v1/compile_results")

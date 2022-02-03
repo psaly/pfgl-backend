@@ -22,15 +22,12 @@ def build_slack_response(
     scores_string = ''
     breakdown_string = ''
     
-    for score_data in team_scoring:
-        scores_string += '*' + score_data["manager_name"] + '*: `' \
-            + _display_score_to_par(score_data["team_score"]) + '`\n'
-        breakdown_string += '*' + score_data["manager_name"] + '*\n'
+    for s in team_scoring:
+        scores_string += f'*{s["manager_name"]}*: `{_display_score_to_par(s["team_score"])}`\n'
+        breakdown_string += f'*{s["manager_name"]}*\n'
         
-        for player_data in score_data["player_scores"]:
-            breakdown_string += ">" + player_data["player_name"] + ': `' \
-                + _display_score_to_par(player_data["kwp_score_to_par"]) \
-                + '` thru ' + player_data['thru'] + '\n'
+        for p in s["player_scores"]:
+            breakdown_string += f'>{p["player_name"]}: `{_display_score_to_par(p["kwp_score_to_par"])}` thru {p["thru"]}\n'
                 
         breakdown_string += '\n'
 
@@ -131,6 +128,75 @@ def build_slack_response(
         
     return slack_res
 
+
+def build_field_response(
+        field: list[dict], 
+        tourney_name: str, 
+        in_channel=True
+) -> dict:
+    summary_string = ''
+    team_strings = ['', '', '', '']
+    
+    print(field)
+    
+    for i, t in enumerate(field):
+        summary_string += f'*{t["manager_name"]}*: `{t["count"]}`\n'
+        team_strings[i] += f'*{t["manager_name"]}*\n'
+        
+        for p in t["players"]:
+            team_strings[i] += f'>{p["name"]}: '
+            if p["playing"]: 
+                team_strings[i] += ":white_check_mark:"
+            else:
+                team_strings[i] += ":x:"
+            team_strings[i] += '\n'
+    
+    slack_res = {
+        "blocks": [   
+            {
+                "type": "header",
+                "text": {
+                    "type": "plain_text",
+                    "text": f"{tourney_name} Field" 
+                }
+		    },
+            {
+                "type": "divider"
+            },
+		    {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": summary_string
+                }
+		    },
+            {
+                "type": "divider"
+            }
+	    ]
+    }
+    
+
+    for ts in team_strings:
+        slack_res["blocks"].extend([
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": ts
+                }
+		    },
+            {
+                "type": "divider"
+            }
+        ])
+    
+    if in_channel:
+        slack_res["response_type"] = "in_channel"
+    
+    print(slack_res)
+    
+    return slack_res
 
 def _display_score_to_par(score: int) -> str:
     """
