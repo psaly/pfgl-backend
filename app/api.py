@@ -130,10 +130,9 @@ async def standings():
         record = team["record"].split("-")
         wins = int(record[0])
         losses = int(record[1])
-
         data["pct"] = f'{wins/(wins+losses):.3f}'
-        data["lowest_score_weeks"] = team["overall_weekly_wins"]
-        data["total_score_to_par"] = total_scores_dict[team["manager"]]
+        data["lowest_score_weeks"] = int(team["overall_weekly_wins"])
+        data["total_score_to_par"] = int(total_scores_dict[team["manager"]])
 
         output["standings"].append(data)
 
@@ -142,7 +141,7 @@ async def standings():
     output["standings"].sort(key=lambda x: x["pct"], reverse=True)
 
     for i, row in enumerate(output["standings"]):
-        row["rank"] = i+1
+        row["rank"] = i + 1
     
     return output
 
