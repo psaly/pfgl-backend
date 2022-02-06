@@ -210,3 +210,18 @@ def get_kwp_field():
         field.append(team_field)
     
     return field
+
+
+def get_team_total_scores_to_par() -> dict:
+    return {
+        s["_id"]: s["total_score_to_par"] for s in list(
+            team_scores_collection.aggregate([{
+                "$group": {
+                    "_id": "$manager", 
+                    "total_score_to_par": {
+                        "$sum": "$score_with_bonus"
+                    }
+                }
+            }])
+        )
+    }
