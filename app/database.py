@@ -16,12 +16,13 @@ matchup_collection = database.get_collection('matchups')
 results_collection = database.get_collection('pfgl_weekly_results')
 team_scores_collection = database.get_collection('team_scores')
 
+
 def get_matchups(segment: int, week: int) -> list[dict]:
     """
     segment 1-3
     week 0-8
     """
-    
+
     return list(matchup_collection.find({"segment": segment, "week": week}, {"_id": 0}))
 
 
@@ -37,7 +38,7 @@ def get_team_by_manager(manager_name: str):
     return roster object from db or None if manager_name does not exist
     """
     return teams_collection.find_one({"manager": manager_name}, {"_id": 0})
-    
+
 
 # Players have optional {dg_name} attribute for matching with datagolf
 def get_team_starting_lineups(kwp=False) -> list:
@@ -56,8 +57,8 @@ def get_team_starting_lineups(kwp=False) -> list:
                     "record": 1,
                     "roster": {
                         "$filter": {
-                            "input": "$roster", 
-                            "as": "player", 
+                            "input": "$roster",
+                            "as": "player",
                             "cond": {
                                 "$eq": ["$$player.starter", True]
                             }
@@ -75,40 +76,42 @@ def get_team_starting_lineups(kwp=False) -> list:
                     "manager_name": 1,
                     "roster": {
                         "$filter": {
-                            "input": "$roster", 
-                            "as": "player", 
+                            "input": "$roster",
+                            "as": "player",
                             "cond": {
                                 "$eq": ["$$player.starter", True]
                             }
                         }
                     }
                 }
-            }]    
+            }]
         )
 
 
-
 def get_player_score_by_name(player_name: str, tourney_name: str) -> dict:
+    """
+    Player score in given tournament.
+    """
     return player_scores_collection.find_one({"player_name": player_name, "tournament_name": tourney_name}, {"_id": 0})
-     
-    
+
 
 def insert_player_scores(player_scores: list[dict]) -> dict:
     """
     Insert player scores from live leaderboard scrape into player_scores collection.
     Return {"success": True/False, "errors_inserting": list of uninserted player_scores}
     """
-    success_message = {"success": True, "scores_successfully_inserted": 0, "errors_inserting": []}
+    success_message = {"success": True,
+                       "scores_successfully_inserted": 0, "errors_inserting": []}
     for score in player_scores:
-        update_result = player_scores_collection.replace_one({"tournament_name": score["tournament_name"], "player_name": score["player_name"]}, score, upsert=True)
+        update_result = player_scores_collection.replace_one(
+            {"tournament_name": score["tournament_name"], "player_name": score["player_name"]}, score, upsert=True)
         if update_result.acknowledged:
             success_message["scores_successfully_inserted"] += 1
         else:
             success_message["success"] = False
             success_message["errors_inserting"].append(score)
-    
-    return success_message
 
+    return success_message
 
 
 def get_tournament_name() -> str:
@@ -121,6 +124,9 @@ def get_tournament_name() -> str:
 
 
 def get_tournament_details() -> dict:
+    """
+    Return full details for active tournament.
+    """
     tourney = tournament_collection.find_one({"active": True}, {"_id": 0})
     if tourney:
         return tourney
@@ -136,68 +142,84 @@ def update_field_this_week(players: list[dict]) -> str:
         tourney_name = players[0]["event_name"]
         # activate this event
         update_active_event(tourney_name)
-        
+
         # wipe this week's field and re-insert
         field_collection.delete_many({"event_name": tourney_name})
         insert_result = field_collection.insert_many(players)
         return f"{tourney_name}: Field size {field_size}.\nSuccessfully inserted {len(insert_result.inserted_ids)} players."
-    
+
     return "COULD NOT INSERT PLAYERS! DG API JSON WAS EMPTY!?!?!"
+
 
 def update_active_event(tourney_name: str) -> dict:
     """
     Makes {tourney_name} the only current active event in the database
     """
     # deactivate current active event
-    tournament_collection.update_many({"active": True}, {"$set": { "active": False}})
+    tournament_collection.update_many(
+        {"active": True}, {"$set": {"active": False}})
     # activate tourney_name event
-    success = tournament_collection.update_one({"tournament_name": tourney_name}, {"$set": {"active": True}}, upsert=True)
+    success = tournament_collection.update_one({"tournament_name": tourney_name}, {
+                                               "$set": {"active": True}}, upsert=True)
     print(f"CURRENT ACTIVE TOURNAMENT UPDATE: {tourney_name}.")
     return success
-    
-    
+
+
 def compile_weekly_results():
+    """
+    Store weekly results in db.
+    """
     tourney_name = get_tournament_name()
-    scoreboard = results_collection.find_one({"tournament_details.tournament_name": tourney_name})
-    matchups_with_ids = get_matchups(config("SEGMENT", cast=int), config("WEEK", cast=int))
-    
+    scoreboard = results_collection.find_one(
+        {"tournament_details.tournament_name": tourney_name})
+    matchups_with_ids = get_matchups(
+        config("SEGMENT", cast=int), config("WEEK", cast=int))
+
     team_results = []
-        
+
     opponents = {}
     for matchup in matchups_with_ids:
         opponents[matchup["managers"][0]] = matchup["managers"][1]
         opponents[matchup["managers"][1]] = matchup["managers"][0]
-        
+
     scores = {}
     for team in scoreboard["teams"]:
-        team_score_with_bonus = team["team_score"] - sum([p["pfgl_bonus"] for p in team["players"]])
+        team_score_with_bonus = team["team_score"] - \
+            sum([p["pfgl_bonus"] for p in team["players"]])
         team_score_without_bonus = team["team_score"]
-        scores[team["manager"]] = [team_score_with_bonus, team_score_without_bonus]
-        
+        scores[team["manager"]] = [
+            team_score_with_bonus, team_score_without_bonus]
+
         team_results.append({
-            "manager": team["manager"], 
+            "manager": team["manager"],
             "segment": config("SEGMENT", cast=int),
             "week": config("WEEK", cast=int),
             "score_with_bonus": team_score_with_bonus,
             "score_without_bonus": team["team_score"],
             "opponent": opponents[team["manager"]]
         })
-    
+
     for res in team_results:
         res["opponent_score_with_bonus"] = scores[res["opponent"]][0]
         res["opponent_score_without_bonus"] = scores[res["opponent"]][1]
-    
+
     team_scores_collection.insert_many(team_results)
-    
+
     return {"message": "success!"}
 
+
 def get_kwp_field():
-    team_rosters = list(kwp_teams_collection.find({}, {"manager_name": 1, "players": "$roster.name", "_id": 0}))
-    
-    player_field = set([p["name"] for p in list(field_collection.find({"event_name": get_tournament_details()["tournament_name"]}, {"name": "$player_name", "_id": 0}))])
-    
+    """
+    Return KWP rosters with field status for this week.
+    """
+    team_rosters = list(kwp_teams_collection.find(
+        {}, {"manager_name": 1, "players": "$roster.name", "_id": 0}))
+
+    player_field = set([p["name"] for p in list(field_collection.find(
+        {"event_name": config("FIELD_EVENT_NAME")}, {"name": "$player_name", "_id": 0}))])
+
     field = []
-    
+
     for team in team_rosters:
         manager = team["manager_name"]
         team_field = {"manager_name": manager, "count": 0, "players": []}
@@ -206,18 +228,22 @@ def get_kwp_field():
                 team_field["players"].append({"name": player, "playing": True})
                 team_field["count"] += 1
             else:
-                team_field["players"].append({"name": player, "playing": False})
+                team_field["players"].append(
+                    {"name": player, "playing": False})
         field.append(team_field)
-    
+
     return field
 
 
 def get_team_total_scores_to_par() -> dict:
+    """
+    Get total score to par for PFGL teams for full season.
+    """
     return {
         s["_id"]: s["total_score_to_par"] for s in list(
             team_scores_collection.aggregate([{
                 "$group": {
-                    "_id": "$manager", 
+                    "_id": "$manager",
                     "total_score_to_par": {
                         "$sum": "$score_with_bonus"
                     }

@@ -220,6 +220,9 @@ async def scoreboard():
 # Slack endpoints
 @app.post('/api/v1/kwp/scores')
 async def kwp_scores(req: Request):
+    """
+    Endpoint for slack /scores.
+    """
     form = await req.form()
 
     if not slack_utils.valid_request(form, slack_utils.SlackChannel.KWP):
@@ -244,6 +247,9 @@ async def kwp_scores(req: Request):
 
 @app.post('/api/v1/kwp/leaderboard')
 async def kwp_leaderboard(req: Request):
+    """
+    Endpoint for slack /leaderboard.
+    """
     form = await req.form()
 
     if not slack_utils.valid_request(form, slack_utils.SlackChannel.KWP):
@@ -268,6 +274,9 @@ async def kwp_leaderboard(req: Request):
 
 @app.post("/api/v1/kwp/field", status_code=200)
 async def kwp_field(req: Request):
+    """
+    Endpoint for slack /field command.
+    """
     form = await req.form()
 
     if not slack_utils.valid_request(form, slack_utils.SlackChannel.KWP):
@@ -275,14 +284,16 @@ async def kwp_field(req: Request):
 
     response_in_channel = False if "-h" in form["text"] else True
 
-    tourney_details = get_tournament_details()
-    tourney_name = tourney_details["tournament_name"]
+    tourney_name = config("FIELD_EVENT_NAME")
 
     return slack_utils.build_field_response(get_kwp_field(), tourney_name, response_in_channel)
 
 
 @app.post("/api/v1/kwp/bonus", status_code=200)
 async def slack_bonus_endpoint(req: Request):
+    """
+    UNUSED -- endpoint for slack bonus interactive updating.
+    """
     form = await req.form()
 
     form_payload = json.loads(form["payload"])

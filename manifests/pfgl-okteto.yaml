@@ -32,6 +32,8 @@ spec:
               value: "True"
             - name: FIELD_UPDATE_INTERVAL
               value: "60"
+            - name: FIELD_EVENT_NAME
+              value: "WM Phoenix Open"
             - name: DISPLAY_OLD_TOURNAMENT_LEADERBOARD
               value: "True"
             - name: OLD_TOURNAMENT_URL
