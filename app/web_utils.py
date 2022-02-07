@@ -153,7 +153,7 @@ def update_webflow_team(roster_data: dict) -> None:
     
     player_num = 1
     for player in roster_data["roster"]:
-        l_name = player['name'].strip().split(' ')[-1]
+        l_name = player['name'].strip().split(' ', 1)[-1]
         
         if len(l_name) > LAST_NAME_DISPLAY_CHARS:
             l_name = f"{l_name[:LAST_NAME_DISPLAY_CHARS - 1]}."
