@@ -1,7 +1,5 @@
 __author__ = 'piercesaly'
 
-from http.client import HTTPException
-import json
 import requests
 from requests.structures import CaseInsensitiveDict
 from bs4 import BeautifulSoup
@@ -11,12 +9,13 @@ PFGL_CUT_PENALTY = 5
 KWP_CUT_PENALTY = 2
 
 # Bonuses for 1-2-3-4-5 place finishes
-KWP_BONUSES = [10,5,3,2,1]
+KWP_BONUSES = [10, 5, 3, 2, 1]
 PFGL_WIN_BONUS = 5
 
 LAST_NAME_DISPLAY_CHARS = 9
 
 WEBFLOW_BASE_URL = "https://api.webflow.com/"
+
 
 def get_field_json() -> list[dict]:
     """
@@ -25,6 +24,7 @@ def get_field_json() -> list[dict]:
     r = requests.get("https://api.datagolf.ca/dg-api/v1/model_probs")
     r.raise_for_status()
     return r.json()
+
 
 def scrape_live_leaderboard(url="https://www.espn.com/golf/leaderboard") -> list:
     """
@@ -39,14 +39,15 @@ def scrape_live_leaderboard(url="https://www.espn.com/golf/leaderboard") -> list
 
     # Get tournament name
     tourney_name = soup.select_one('.Leaderboard__Event__Title').text
-    
+
     # Check if the tournament is final because the formatting changes
     status = soup.find('div', class_='status')
-    final = True if status and status.findChild() and 'Final' in status.findChild().text and 'Round' not in status.findChild().text else False
+    final = True if status and status.findChild() and 'Final' in status.findChild(
+    ).text and 'Round' not in status.findChild().text else False
 
     # for storing parsed player data
     all_players = []
-    
+
     worst_score = -1000  # placeholder
 
     pos_offset = 1  # will be changed to 2 if we see there are movement arrows in the table
@@ -65,9 +66,9 @@ def scrape_live_leaderboard(url="https://www.espn.com/golf/leaderboard") -> list
                     player = child.text
                     kwp_bonus = 0
                     pfgl_bonus = 0
-                    
+
                     score_text = tds[i+1].text
-                    
+
                     if score_text == 'E':
                         score = 0
                     else:
@@ -88,41 +89,42 @@ def scrape_live_leaderboard(url="https://www.espn.com/golf/leaderboard") -> list
                             pfgl_bonus = PFGL_WIN_BONUS
                         if pos_int < 6:
                             kwp_bonus = KWP_BONUSES[pos_int - 1]
-                            
+
                     except ValueError:
                         pass
-                    
-                    
+
                     # add to players list
                     # score could be None still if we need to fill in with worst score
                     # Maybe create an object here?
                     all_players.append({
-                                        "tournament_name": tourney_name,
-                                        "player_name": player, 
-                                        "position": pos, 
-                                        "score_to_par": score, 
-                                        "pfgl_bonus": pfgl_bonus,
-                                        "kwp_score_to_par": score,
-                                        "kwp_bonus": kwp_bonus,
-                                        "today": today,
-                                        "thru": thru
-                                        })                                  
+                        "tournament_name": tourney_name,
+                        "player_name": player,
+                        "position": pos,
+                        "score_to_par": score,
+                        "pfgl_bonus": pfgl_bonus,
+                        "kwp_score_to_par": score,
+                        "kwp_bonus": kwp_bonus,
+                        "today": today,
+                        "thru": thru
+                    })
         except KeyError:
             print(f"**WEIRD ERROR** {tds[i]}")
         except IndexError:
             print(f"**INDEX ERROR--tournament is probably not live** {tds[i]}")
-    
-    
+
     # update all players who MC/WD/DQ score to the cut placeholder
     for player in all_players:
         if player["score_to_par"] is None:
             player["score_to_par"] = worst_score + PFGL_CUT_PENALTY
             player["kwp_score_to_par"] = worst_score + KWP_CUT_PENALTY
-    
+
     return all_players
 
 
 def send_slack_bonus_request(url: str, content: dict) -> int:
+    """
+    Bonus interaction in slack -- not currently in use 
+    """
     headers = CaseInsensitiveDict()
     headers["Content-Type"] = "application/json"
 
@@ -131,16 +133,17 @@ def send_slack_bonus_request(url: str, content: dict) -> int:
         "blocks": content
     }
 
-    
-    
     resp = requests.post(url, headers, data)
     return (resp.status_code)
 
 
 def update_webflow_team(roster_data: dict) -> None:
+    """
+    Publish to webflow collection
+    """
     webflow_collection_id = config("WEBFLOW_TEAM_COLLECTION_ID")
     webflow_auth_token = config("WEBFLOW_AUTH_TOKEN")
-    
+
     url = f"https://api.webflow.com/collections/{webflow_collection_id}/items/{roster_data['webflow_id']}?live=true"
 
     headers = {}
@@ -150,22 +153,22 @@ def update_webflow_team(roster_data: dict) -> None:
     headers["accept-version"] = "1.0.0"
 
     request_data = {"fields": {}}
-    
+
     player_num = 1
     for player in roster_data["roster"]:
-        l_name = player['name'].strip().split(' ', 1)[-1]
-        
+        l_name = player['name'].strip().rstrip(" III").split(' ', 1)[-1]
+
         if len(l_name) > LAST_NAME_DISPLAY_CHARS:
             l_name = f"{l_name[:LAST_NAME_DISPLAY_CHARS - 1]}."
-        
+
         player_abbrev = f"{player['name'][0]}. {l_name}"
-        
+
         if player_num < 10:
             request_data["fields"][f"player-0{player_num}"] = player_abbrev
         else:
             request_data["fields"][f"player-{player_num}-2"] = player_abbrev
         player_num += 1
-    
+
     resp = requests.patch(url, headers=headers, json=request_data)
 
     try:
