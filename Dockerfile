@@ -2,9 +2,9 @@ FROM python:3.9-slim-bullseye
 
 RUN pip install pipenv
 
-ADD Pipfile /Pipfile
-ADD Pipfile.lock /Pipfile.lock
-ADD main.py /main.py
+WORKDIR /
+
+ADD Pipfile Pipfile.lock main.py /
 
 RUN pipenv install --system --deploy
 
