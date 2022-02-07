@@ -142,7 +142,7 @@ async def standings():
 
     for i, row in enumerate(output["standings"]):
         row["rank"] = i + 1
-    
+
     return output
 
 
