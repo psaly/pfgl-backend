@@ -282,7 +282,7 @@ async def kwp_field(req: Request):
     if not slack_utils.valid_request(form, slack_utils.SlackChannel.KWP):
         raise HTTPException(status_code=400, detail="Invalid token.")
 
-    response_in_channel = False if "-h" in form["text"] else True
+    response_in_channel = not "-h" in form["text"]
 
     tourney_name = config("FIELD_EVENT_NAME")
 

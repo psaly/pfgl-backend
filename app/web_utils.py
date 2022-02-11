@@ -42,8 +42,8 @@ def scrape_live_leaderboard(url="https://www.espn.com/golf/leaderboard") -> list
 
     # Check if the tournament is final because the formatting changes
     status = soup.find('div', class_='status')
-    final = True if status and status.findChild() and 'Final' in status.findChild(
-    ).text and 'Round' not in status.findChild().text else False
+    final = status and status.findChild() and 'Final' in status.findChild(
+    ).text and 'Round' not in status.findChild().text
 
     # for storing parsed player data
     all_players = []
@@ -111,6 +111,8 @@ def scrape_live_leaderboard(url="https://www.espn.com/golf/leaderboard") -> list
             print(f"**WEIRD ERROR** {tds[i]}")
         except IndexError:
             print(f"**INDEX ERROR--tournament is probably not live** {tds[i]}")
+
+    print(f"Tourney: {tourney_name}")
 
     # update all players who MC/WD/DQ score to the cut placeholder
     for player in all_players:
