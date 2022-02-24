@@ -16,6 +16,10 @@ spec:
         - image: piercesaly/pfgl:latest # pullPolicy Always when use latest tag
           name: pfgl
           env:
+            - name: PYTHONUNBUFFERED
+              value: "1"
+            - name: PYTHONIOENCODING
+              value: "UTF-8"
             - name: DB_HOST
               value: "mongodb://mongodb:27017"
             - name: UVICORN_RELOAD
@@ -25,11 +29,11 @@ spec:
             - name: COUNTING_SCORES
               value: "4"
             - name: UPDATE_PLAYER_SCORES_DB
-              value: "False"
-            - name: LEADERBOARD_SCRAPE_INTERVAL
-              value: "10000"
-            - name: UPDATE_FIELD
               value: "True"
+            - name: LEADERBOARD_SCRAPE_INTERVAL
+              value: "1"
+            - name: UPDATE_FIELD
+              value: "False"
             - name: FIELD_UPDATE_INTERVAL
               value: "60"
             - name: FIELD_EVENT_NAME
