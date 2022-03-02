@@ -4,7 +4,7 @@
     "manager_name": "Lucas",
     "team_name": "Rahmrod Noodle",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1f9d24da7eca8ca392_lucas.jpg",
-    "record": "5-1-0",
+    "record": "5-2-0",
     "overall_weekly_wins": 2,
     "webflow_id": "619c3b7afccf705d6a79a698",
     "roster": [
@@ -18,7 +18,7 @@
       },
       {
         "name": "Joaquin Niemann",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Justin Rose",
@@ -30,11 +30,11 @@
       },
       {
         "name": "Keith Mitchell",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Ryan Palmer",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Matt Kuchar",
@@ -46,19 +46,19 @@
       },
       {
         "name": "Stewart Cink",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Wesley Bryan",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Bill Haas",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Charl Schwartzel",
-        "starter": true
+        "starter": false
       }
     ]
   },
@@ -67,8 +67,8 @@
     "manager_name": "James",
     "team_name": "Drops of Jupiter",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1d6669d5ea1c2ca8a5_james.jpg",
-    "record": "4-2-0",
-    "overall_weekly_wins": 0,
+    "record": "5-2-0",
+    "overall_weekly_wins": 1,
     "webflow_id": "619c3b47911ac3e05b048c73",
     "roster": [
       {
@@ -81,7 +81,7 @@
       },
       {
         "name": "Sungjae Im",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Charley Hoffman",
@@ -93,7 +93,7 @@
       },
       {
         "name": "Kevin Streelman",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Joel Dahmen",
@@ -105,7 +105,7 @@
       },
       {
         "name": "Gary Woodland",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Bubba Watson",
@@ -113,15 +113,15 @@
       },
       {
         "name": "Alex Smalley",
-        "starter": true
+        "starter": false
       },
       {
         "name": "J.J. Spaun",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Sepp Straka",
-        "starter": true
+        "starter": false
       }
     ]
   },
@@ -130,7 +130,7 @@
     "manager_name": "Jordan",
     "team_name": "Honest Abraham & the Sicarios",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1fbeac884e2aa73f0b_jordan.jpg",
-    "record": "2-4-0",
+    "record": "3-4-0",
     "overall_weekly_wins": 0,
     "webflow_id": "619c3b5585a3c98aa2d3c680",
     "roster": [
@@ -152,7 +152,7 @@
       },
       {
         "name": "Mito Pereira",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Cameron Champ",
@@ -164,28 +164,28 @@
       },
       {
         "name": "Chad Ramey",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Matt Jones",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Chase Seiffert",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Adam Svensson",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Vince Whaley",
-        "starter": true,
+        "starter": false,
         "dg_name": "Vincent Whaley"
       },
       {
-        "name": "Hudson Swafford",
-        "starter": true
+        "name": "Nick Taylor",
+        "starter": false
       }
     ]
   },
@@ -194,7 +194,7 @@
     "manager_name": "Alex",
     "team_name": "5AM in Dundas",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1eda1792c20b2b90cc_alex.jpg",
-    "record": "4-2-0",
+    "record": "5-2-0",
     "overall_weekly_wins": 2,
     "webflow_id": "619c3b13c1ee4023accbebc8",
     "roster": [
@@ -220,35 +220,35 @@
       },
       {
         "name": "Jhonattan Vegas",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Alex Noren",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Ian Poulter",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Chris Kirk",
-        "starter": true
+        "starter": false
       },
       {
-        "name": "Zach Johnson",
-        "starter": true
+        "name": "Troy Merritt",
+        "starter": false
       },
       {
         "name": "Tom Hoge",
         "starter": false
       },
       {
-        "name": "Nicolai Højgaard",
-        "starter": true
+        "name": "Andrew Putnam",
+        "starter": false
       },
       {
         "name": "Aaron Rai",
-        "starter": true
+        "starter": false
       }
     ]
   },
@@ -257,7 +257,7 @@
     "manager_name": "Calum",
     "team_name": "Saw Dudes",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1df683d235a41b6953_calum.jpg",
-    "record": "6-0-0",
+    "record": "7-0-0",
     "overall_weekly_wins": 2,
     "webflow_id": "619c3b3744af52c0089cd1a6",
     "roster": [
@@ -275,7 +275,7 @@
       },
       {
         "name": "Shane Lowry",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Marc Leishman",
@@ -283,11 +283,11 @@
       },
       {
         "name": "Brian Harman",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Christiaan Bezuidenhout",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Jason Day",
@@ -295,22 +295,22 @@
       },
       {
         "name": "Garrick Higgo",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Cameron Young",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Lee Westwood",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Denny McCarthy",
-        "starter": true
+        "starter": false
       },
       {
-        "name": "Doug Ghim",
+        "name": "Francesco Molinari",
         "starter": false
       }
     ]
@@ -320,7 +320,7 @@
     "manager_name": "Will",
     "team_name": "Pineapple Daiquiri",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1f7084bb360617fa43_will.jpg",
-    "record": "1-5-0",
+    "record": "1-6-0",
     "overall_weekly_wins": 0,
     "webflow_id": "619c3b9079c3f3a7286b1d95",
     "roster": [
@@ -334,7 +334,7 @@
       },
       {
         "name": "Beau Hossler",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Tyrrell Hatton",
@@ -359,19 +359,19 @@
       },
       {
         "name": "Taylor Pendrith",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Kramer Hickok",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Hayden Buckley",
-        "starter": true
+        "starter": false
       },
       {
         "name": "C.T. Pan",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Thomas Pieters",
@@ -385,21 +385,21 @@
     "team_name": "Freed Piss Bear",
     "old_logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1f2e8e2e459437236e_pierce.jpg",
     "logo_url": "https://ca.slack-edge.com/TFF0MHYLT-UFF3HP3HA-b265970c3e19-512",
-    "record": "1-5-0",
+    "record": "2-5-0",
     "overall_weekly_wins": 0,
     "webflow_id": "619c3b8785a3c92678d3c68d",
     "roster": [
       {
-        "name": "Bryson DeChambeau",
+        "name": "Pat Perez",
         "starter": false
       },
       {
         "name": "Daniel Berger",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Patrick Reed",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Paul Casey",
@@ -407,11 +407,11 @@
       },
       {
         "name": "Matthew Wolff",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Tommy Fleetwood",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Erik van Rooyen",
@@ -420,7 +420,7 @@
       },
       {
         "name": "Taylor Moore",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Luke List",
@@ -432,7 +432,7 @@
       },
       {
         "name": "K.H. Lee",
-        "starter": true,
+        "starter": false,
         "dg_name": "Kyoung-Hoon Lee"
       },
       {
@@ -441,7 +441,7 @@
       },
       {
         "name": "Russell Knox",
-        "starter": true
+        "starter": false
       }
     ]
   },
@@ -450,7 +450,7 @@
     "manager_name": "Keith",
     "team_name": "Sabbatini's Soldiers",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1e2880484d627dba6d_keith.jpg",
-    "record": "1-5-0",
+    "record": "1-6-0",
     "overall_weekly_wins": 0,
     "webflow_id": "619c3b6ba96ceb2ceac4bbf1",
     "roster": [
@@ -464,7 +464,7 @@
       },
       {
         "name": "Mackenzie Hughes",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Matt Fitzpatrick",
@@ -484,15 +484,15 @@
       },
       {
         "name": "Lucas Herbert",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Harry Higgs",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Charles Howell III",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Min Woo Lee",
@@ -504,7 +504,7 @@
       },
       {
         "name": "Rory Sabbatini",
-        "starter": true
+        "starter": false
       }
     ]
   },
@@ -513,7 +513,7 @@
     "manager_name": "Al",
     "team_name": "Snow Patrol",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1fb85a4be6c20eb9c4_al.jpg",
-    "record": "4-2-0",
+    "record": "4-3-0",
     "overall_weekly_wins": 0,
     "webflow_id": "619c381c44af52339c9cccd2",
     "roster": [
@@ -523,11 +523,11 @@
       },
       {
         "name": "Louis Oosthuizen",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Billy Horschel",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Kevin Na",
@@ -539,11 +539,11 @@
       },
       {
         "name": "Rickie Fowler",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Brendon Todd",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Lanto Griffin",
@@ -551,7 +551,7 @@
       },
       {
         "name": "Brendan Steele",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Martin Laird",
@@ -559,7 +559,7 @@
       },
       {
         "name": "Lucas Glover",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Chez Reavie",
@@ -576,13 +576,13 @@
     "manager_name": "Braden",
     "team_name": "Brinks Koepka",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1fe73de480d40b491f_braden.jpg",
-    "record": "2-4-0",
+    "record": "2-5-0",
     "overall_weekly_wins": 0,
     "webflow_id": "619c3b2d0ade2299ef2ab326",
     "roster": [
       {
         "name": "Brooks Koepka",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Jordan Spieth",
@@ -598,7 +598,7 @@
       },
       {
         "name": "Aaron Wise",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Seamus Power",
@@ -606,15 +606,15 @@
       },
       {
         "name": "Dylan Frittelli",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Greyson Sigg",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Stephan Jaeger",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Danny Lee",
@@ -622,7 +622,7 @@
       },
       {
         "name": "Nick Hardy",
-        "starter": true
+        "starter": false
       },
       {
         "name": "Henrik Norlander",
@@ -630,7 +630,7 @@
       },
       {
         "name": "Paul Barjon",
-        "starter": true
+        "starter": false
       }
     ]
   }
