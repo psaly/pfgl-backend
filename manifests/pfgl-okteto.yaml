@@ -29,25 +29,25 @@ spec:
             - name: COUNTING_SCORES
               value: "4"
             - name: UPDATE_PLAYER_SCORES_DB
-              value: "True"
-            - name: LEADERBOARD_SCRAPE_INTERVAL
-              value: "10000"
-            - name: UPDATE_FIELD
               value: "False"
+            - name: LEADERBOARD_SCRAPE_INTERVAL
+              value: "1"
+            - name: UPDATE_FIELD
+              value: "True"
             - name: FIELD_UPDATE_INTERVAL
               value: "60"
             - name: FIELD_EVENT_NAME
-              value: "Arnold Palmer Invitational"
+              value: "Valspar Championship"
             - name: DISPLAY_OLD_TOURNAMENT_LEADERBOARD
-              value: "False"
+              value: "True"
             - name: OLD_TOURNAMENT_URL
-              value: "https://www.espn.com/golf/leaderboard/_/tournamentId/401353238"
+              value: "https://www.espn.com/golf/leaderboard/_/tournamentId/401353254"
             - name: OLD_TOURNAMENT_NAME
-              value: "The Honda Classic"
+              value: "THE PLAYERS Championship"
             - name: SEGMENT
               value: "1"
             - name: WEEK
-              value: "7"
+              value: "8"
             - name: WEBFLOW_TEAM_COLLECTION_ID
               value: "619c368b7c5d456d6f173d98"
             - name: WEBFLOW_AUTH_TOKEN

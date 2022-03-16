@@ -4,8 +4,11 @@
     "manager_name": "Lucas",
     "team_name": "Rahmrod Noodle",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1f9d24da7eca8ca392_lucas.jpg",
-    "record": "5-2-0",
+    "record": "6-3",
     "overall_weekly_wins": 2,
+    "segment_1_bonus_cash": 13,
+    "segment_1_cash": 26,
+    "segment_1_score_to_par": -281,
     "webflow_id": "619c3b7afccf705d6a79a698",
     "roster": [
       {
@@ -67,8 +70,11 @@
     "manager_name": "James",
     "team_name": "Drops of Jupiter",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1d6669d5ea1c2ca8a5_james.jpg",
-    "record": "5-2-0",
+    "record": "5-4",
     "overall_weekly_wins": 1,
+    "segment_1_bonus_cash": 0,
+    "segment_1_cash": 12,
+    "segment_1_score_to_par": -272,
     "webflow_id": "619c3b47911ac3e05b048c73",
     "roster": [
       {
@@ -130,8 +136,11 @@
     "manager_name": "Jordan",
     "team_name": "Honest Abraham & the Sicarios",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1fbeac884e2aa73f0b_jordan.jpg",
-    "record": "3-4-0",
+    "record": "5-4",
     "overall_weekly_wins": 0,
+    "segment_1_bonus_cash": 0,
+    "segment_1_cash": 22,
+    "segment_1_score_to_par": -101,
     "webflow_id": "619c3b5585a3c98aa2d3c680",
     "roster": [
       {
@@ -171,7 +180,7 @@
         "starter": false
       },
       {
-        "name": "Chase Seiffert",
+        "name": "Ryan Brehm",
         "starter": false
       },
       {
@@ -194,8 +203,11 @@
     "manager_name": "Alex",
     "team_name": "5AM in Dundas",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1eda1792c20b2b90cc_alex.jpg",
-    "record": "5-2-0",
+    "record": "6-3",
     "overall_weekly_wins": 2,
+    "segment_1_bonus_cash": 5,
+    "segment_1_cash": 20,
+    "segment_1_score_to_par": -270,
     "webflow_id": "619c3b13c1ee4023accbebc8",
     "roster": [
       {
@@ -257,8 +269,11 @@
     "manager_name": "Calum",
     "team_name": "Saw Dudes",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1df683d235a41b6953_calum.jpg",
-    "record": "7-0-0",
-    "overall_weekly_wins": 2,
+    "record": "9-0",
+    "overall_weekly_wins": 3,
+    "segment_1_bonus_cash": 20,
+    "segment_1_cash": 48,
+    "segment_1_score_to_par": -318,
     "webflow_id": "619c3b3744af52c0089cd1a6",
     "roster": [
       {
@@ -320,8 +335,11 @@
     "manager_name": "Will",
     "team_name": "Pineapple Daiquiri",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1f7084bb360617fa43_will.jpg",
-    "record": "1-6-0",
-    "overall_weekly_wins": 0,
+    "record": "3-6",
+    "overall_weekly_wins": 1,
+    "segment_1_bonus_cash": 0,
+    "segment_1_cash": 31,
+    "segment_1_score_to_par": -168,
     "webflow_id": "619c3b9079c3f3a7286b1d95",
     "roster": [
       {
@@ -385,8 +403,11 @@
     "team_name": "Freed Piss Bear",
     "old_logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1f2e8e2e459437236e_pierce.jpg",
     "logo_url": "https://ca.slack-edge.com/TFF0MHYLT-UFF3HP3HA-b265970c3e19-512",
-    "record": "2-5-0",
+    "record": "3-6",
     "overall_weekly_wins": 0,
+    "segment_1_bonus_cash": 0,
+    "segment_1_cash": 12,
+    "segment_1_score_to_par": -173,
     "webflow_id": "619c3b8785a3c92678d3c68d",
     "roster": [
       {
@@ -427,7 +448,7 @@
         "starter": false
       },
       {
-        "name": "Branden Grace",
+        "name": "Doug Ghim",
         "starter": false
       },
       {
@@ -450,8 +471,11 @@
     "manager_name": "Keith",
     "team_name": "Sabbatini's Soldiers",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1e2880484d627dba6d_keith.jpg",
-    "record": "1-6-0",
+    "record": "1-8",
     "overall_weekly_wins": 0,
+    "segment_1_bonus_cash": 0,
+    "segment_1_cash": 4,
+    "segment_1_score_to_par": -90,
     "webflow_id": "619c3b6ba96ceb2ceac4bbf1",
     "roster": [
       {
@@ -513,8 +537,11 @@
     "manager_name": "Al",
     "team_name": "Snow Patrol",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1fb85a4be6c20eb9c4_al.jpg",
-    "record": "4-3-0",
+    "record": "4-5",
     "overall_weekly_wins": 0,
+    "segment_1_bonus_cash": 0,
+    "segment_1_cash": 8,
+    "segment_1_score_to_par": -183,
     "webflow_id": "619c381c44af52339c9cccd2",
     "roster": [
       {
@@ -576,8 +603,11 @@
     "manager_name": "Braden",
     "team_name": "Brinks Koepka",
     "logo_url": "https://uploads-ssl.webflow.com/6197d4764be05905a7f7d882/61d65c1fe73de480d40b491f_braden.jpg",
-    "record": "2-5-0",
+    "record": "3-6",
     "overall_weekly_wins": 0,
+    "segment_1_bonus_cash": 0,
+    "segment_1_cash": 8,
+    "segment_1_score_to_par": -123,
     "webflow_id": "619c3b2d0ade2299ef2ab326",
     "roster": [
       {

@@ -1,0 +1,8 @@
+// Count Wins
+db.team_scores.find( {manager:"will",  $expr: {$lt: [ "$score_with_bonus" , "$opponent_score_with_bonus" ] }}).count()
+
+// Money Earned
+db.team_scores.aggregate([{"$group": {"_id": "$manager", "money_before_bonus": {"$sum": "$money_earned"}}}, {$sort:{money_before_bonus:-1}}])
+
+// Score to Par
+db.team_scores.aggregate([{"$group": {"_id": "$manager", "score_to_par": {"$sum": "$score_with_bonus"}}}, {$sort:{score_to_par:1}}])
