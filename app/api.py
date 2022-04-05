@@ -331,11 +331,12 @@ def get_live_scores():
 
 
 @app.get("/api/v1/compile_results")
-def compile_results():
+def compile_results(win_value: int, low_score_value: int):
     """
     Store weekly matchup results in database
+    :param win_value, low_score_value: $ value of this week
     """
-    return compile_weekly_results()
+    return compile_weekly_results(win_value, low_score_value)
 
 
 def _get_kwp_scores(tournament_name: str, bonus: bool) -> list[dict]:

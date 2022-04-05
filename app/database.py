@@ -165,7 +165,7 @@ def update_active_event(tourney_name: str) -> dict:
     return success
 
 
-def compile_weekly_results():
+def compile_weekly_results(win_value: int, low_score_value: int):
     """
     Store weekly results in db.
     """
@@ -183,9 +183,11 @@ def compile_weekly_results():
         opponents[matchup["managers"][1]] = matchup["managers"][0]
 
     scores = {}
+    best_score = 100
     for team in scoreboard["teams"]:
         team_score_with_bonus = team["team_score"] - \
             sum([p["pfgl_bonus"] for p in team["players"]])
+        best_score = min(best_score, team_score_with_bonus)
         team_score_without_bonus = team["team_score"]
         scores[team["manager"]] = [
             team_score_with_bonus, team_score_without_bonus]
@@ -202,6 +204,9 @@ def compile_weekly_results():
     for res in team_results:
         res["opponent_score_with_bonus"] = scores[res["opponent"]][0]
         res["opponent_score_without_bonus"] = scores[res["opponent"]][1]
+        res["low_score_win"] = 1 if res["score_with_bonus"] == best_score else 0
+        res["money_earned"] = win_value + res["low_score_win"] * low_score_value \
+            if res["score_with_bonus"] < res["opponent_score_with_bonus"] else 0
 
     team_scores_collection.insert_many(team_results)
 
