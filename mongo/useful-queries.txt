@@ -1,5 +1,21 @@
 // Count Wins
+- Segment:
+db.team_scores.aggregate([{$match:{segment:2, $expr: {$lt: [ "$score_with_bonus" , "$opponent_score_with_bonus" ] }}},{"$group": {"_id": "$manager", "wins": {"$sum": 1}}}, {$sort:{wins:-1}}])
+- Total
 db.team_scores.find( {manager:"will",  $expr: {$lt: [ "$score_with_bonus" , "$opponent_score_with_bonus" ] }}).count()
+
+// Losses
+- Segment:
+db.team_scores.aggregate([{$match:{segment:2, $expr: {$gt: [ "$score_with_bonus" , "$opponent_score_with_bonus" ] }}},{"$group": {"_id": "$manager", "losses": {"$sum": 1}}}, {$sort:{losses:-1}}])
+- Total
+db.team_scores.find( {manager:"will",  $expr: {$gt: [ "$score_with_bonus" , "$opponent_score_with_bonus" ] }}).count()
+
+// Draws
+- Segment:
+db.team_scores.aggregate([{$match:{segment:2, $expr: {$eq: [ "$score_with_bonus" , "$opponent_score_with_bonus" ] }}},{"$group": {"_id": "$manager", "ties": {"$sum": 1}}}, {$sort:{ties:-1}}])
+- Total
+db.team_scores.find( {manager:"will",  $expr: {$eq: [ "$score_with_bonus" , "$opponent_score_with_bonus" ] }}).count()
+
 
 // Money Earned
 db.team_scores.aggregate([{"$group": {"_id": "$manager", "money_before_bonus": {"$sum": "$money_earned"}}}, {$sort:{money_before_bonus:-1}}])
