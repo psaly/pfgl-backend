@@ -120,7 +120,8 @@ async def standings():
     """
     output = {"standings": []}
 
-    total_scores_dict = get_team_total_scores_to_par()
+    total_scores_dict = get_team_total_scores_to_par(
+        config("SEGMENT", cast=int))
 
     for team in get_all_teams():
         data = {}

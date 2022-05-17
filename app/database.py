@@ -240,19 +240,24 @@ def get_kwp_field():
     return field
 
 
-def get_team_total_scores_to_par() -> dict:
+def get_team_total_scores_to_par(segment: int) -> dict:
     """
     Get total score to par for PFGL teams for full season.
     """
     return {
         s["_id"]: s["total_score_to_par"] for s in list(
-            team_scores_collection.aggregate([{
-                "$group": {
-                    "_id": "$manager",
-                    "total_score_to_par": {
-                        "$sum": "$score_with_bonus"
+            team_scores_collection.aggregate([
+                {
+                    "$match": {"segment": segment}
+                },
+                {
+                    "$group": {
+                        "_id": "$manager",
+                        "total_score_to_par": {
+                            "$sum": "$score_with_bonus"
+                        }
                     }
                 }
-            }])
+            ])
         )
     }
