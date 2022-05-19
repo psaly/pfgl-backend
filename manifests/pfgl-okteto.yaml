@@ -33,13 +33,13 @@ spec:
             - name: LEADERBOARD_SCRAPE_INTERVAL
               value: "1"
             - name: UPDATE_FIELD
-              value: "True"
+              value: "False"
             - name: FIELD_UPDATE_INTERVAL
-              value: "60"
+              value: "1000"
             - name: FIELD_EVENT_NAME
               value: "PGA Championship"
             - name: DISPLAY_OLD_TOURNAMENT_LEADERBOARD
-              value: "True"
+              value: "False"
             - name: OLD_TOURNAMENT_URL
               value: "https://www.espn.com/golf/leaderboard/_/tournamentId/401353227"
             - name: OLD_TOURNAMENT_NAME
@@ -47,13 +47,13 @@ spec:
             - name: SEGMENT
               value: "2"
             - name: WEEK
-              value: "6"
+              value: "7"
             - name: WEBFLOW_TEAM_COLLECTION_ID
               value: "619c368b7c5d456d6f173d98"
             - name: WEBFLOW_AUTH_TOKEN
               value: "cbb0f0444d29e4a70267af4a5c178eff5372ee8633cc79cedb32c5008229ae98"
             - name: PUBLISH_ROSTERS
-              value: "False"
+              value: "True"
 
 ---
 apiVersion: v1
